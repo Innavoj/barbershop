@@ -8,6 +8,7 @@
           class="mx-4"
           :icon="icon"
           variant="tonal"
+          density="comfortable"
         ></v-btn>
       </div>
 
@@ -41,7 +42,7 @@
         </div>
       </div>
 
-      <v-divider></v-divider>
+      <v-divider class="mx-4"></v-divider>
 
       <div class="mt-4">
         {{ new Date().getFullYear() }} —
@@ -62,3 +63,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+p {
+  color: cyan;
+}
+</style>
