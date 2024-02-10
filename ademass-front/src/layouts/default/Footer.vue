@@ -59,7 +59,13 @@
 export default {
   name: "App",
   data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    icons: [
+      "mdi-facebook",
+      "mdi-twitter",
+      "mdi-linkedin",
+      "mdi-instagram",
+      "mdi-youtube",
+    ],
   }),
 };
 </script>
