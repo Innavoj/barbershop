@@ -7,7 +7,7 @@
           :key="icon"
           class="mx-4"
           :icon="icon"
-          variant="tonal"
+          variant="text"
           density="comfortable"
         ></v-btn>
       </div>
@@ -39,6 +39,9 @@
           <a class="text-white">13:00 - 14:00</a>
           <a class="text-white">14:00 - 15:00</a>
           <a class="text-white">15:00 - 16:00</a>
+        </div>
+        <div class="imagen">
+          <img src="@/assets/barbershop1.jpg" />
         </div>
       </div>
 
