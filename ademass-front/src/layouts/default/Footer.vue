@@ -1,29 +1,56 @@
 <template>
-  <v-footer class="bg-indigo-lighten-1 text-center d-flex flex-column">
-    <div>
-      <v-btn
-        v-for="icon in icons"
-        :key="icon"
-        class="mx-4"
-        :icon="icon"
-        variant="text"
-      ></v-btn>
-    </div>
+  <v-layout>
+    <v-footer class="bg-black text-center d-flex flex-column">
+      <div>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4"
+          :icon="icon"
+          variant="text"
+        ></v-btn>
+      </div>
 
-    <div class="pt-0">
-      Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris
-      cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id
-      ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui.
-      Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada.
-      Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin.
-      Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius
-      natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </div>
+      <div class="d-flex">
+        <div class="imagen">
+          <img src="@/assets/barbershop1.jpg" />
+        </div>
+        <div class="d-flex flex-column">
+          <p><strong>Contactos</strong></p>
+          <a href="#" class="text-white">+34 555 555 555</a>
+          <a href="#" class="text-white">Barber Jhon</a>
+          <a href="#" class="text-white">barberjhon@barbershop.com</a>
+          <div class="mt-4 pt-4">
+            <p><strong>Únete a Nosotros</strong></p>
+            <a href="#" class="text-white">Trabaja con nosotros</a>
+          </div>
+        </div>
 
-    <v-divider></v-divider>
+        <div class="d-flex flex-column">
+          <p><strong>Legal</strong></p>
+          <a href="#" class="text-white">Política de Privacidad</a>
+          <a href="#" class="text-white">Avíso Legal</a>
+        </div>
+      </div>
 
-    <div>{{ new Date().getFullYear() }} — <strong>Vuetify</strong></div>
-  </v-footer>
+      <v-divider></v-divider>
+
+      <div>
+        {{ new Date().getFullYear() }} —
+        <strong
+          >Barbershop Copyright (R) Todos los Derechos Reservados. Version
+          1.0</strong
+        >
+      </div>
+    </v-footer>
+  </v-layout>
 </template>
 
-<script setup></script>
+<script>
+export default {
+  name: "App",
+  data: () => ({
+    icons: ["bi bi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+  }),
+};
+</script>
