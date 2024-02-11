@@ -3,6 +3,7 @@
     <v-footer class="bg-black text-center d-flex flex-column">
       <div class="mt-4 mb-4">
         <v-btn
+          id="btn-icons"
           v-for="icon in icons"
           :key="icon"
           class="mx-4"
@@ -18,15 +19,27 @@
         </div>
         <div class="pt-2 d-flex flex-column">
           <p><strong>Contactos</strong></p>
-          <a href="#" class="text-white">+34 555 555 555</a>
-          <a href="#" class="text-white">Barber Jhon</a>
-          <a href="#" class="text-white">barberjhon@barbershop.com</a>
+          <a href="#" class="text-white"
+            ><v-icon icon="mdi-cellphone-sound " class="mr-2" />+34 555 555
+            555</a
+          >
+          <a href="#" class="text-white"
+            ><v-icon icon="mdi-account-tie" class="mr-2" />Barber Jhon</a
+          >
+          <a href="#" class="text-white"
+            ><v-icon
+              icon="mdi-email"
+              class="mr-2"
+            />barberjhon@barbershop.com</a
+          >
           <div class="mt-4 pt-4">
             <p><strong>Únete a Nosotros</strong></p>
-            <a href="#" class="text-white">Trabaja con nosotros</a>
+            <a href="#" class="text-white"
+              ><v-icon icon="mdi-map-marker" class="mr-2" />Trabaja con
+              nosotros</a
+            >
           </div>
         </div>
-
         <div class="pt-2 ml-6 d-flex flex-column">
           <p><strong>Legal</strong></p>
           <a href="#" class="text-white">Política de Privacidad</a>
@@ -34,18 +47,28 @@
         </div>
         <div class="pt-2 ml-6 d-flex flex-column">
           <p><strong>Horarios de Trabajo</strong></p>
-          <a class="text-white">08:00 - 09:00</a>
-          <a class="text-white">10:00 - 11:00</a>
-          <a class="text-white">13:00 - 14:00</a>
-          <a class="text-white">14:00 - 15:00</a>
-          <a class="text-white">15:00 - 16:00</a>
+          <a class="text-white"
+            ><v-icon icon="mdi-timer" class="mr-2" />08:00 - 09:00</a
+          >
+          <a class="text-white"
+            ><v-icon icon="mdi-timer" class="mr-2" />10:00 - 11:00</a
+          >
+          <a class="text-white"
+            ><v-icon icon="mdi-timer" class="mr-2" />13:00 - 14:00</a
+          >
+          <a class="text-white"
+            ><v-icon icon="mdi-timer" class="mr-2" />14:00 - 15:00</a
+          >
+          <a class="text-white"
+            ><v-icon icon="mdi-timer" class="mr-2" />15:00 - 16:00</a
+          >
         </div>
         <div class="imagen">
           <img src="@/assets/barbershop1.jpg" />
         </div>
       </div>
 
-      <v-divider class="mx-4"></v-divider>
+      <v-divider></v-divider>
 
       <div class="mt-4">
         {{ new Date().getFullYear() }} —
@@ -76,5 +99,8 @@ export default {
 <style scoped>
 p {
   color: cyan;
+}
+#btn-icons:hover {
+  color: aqua;
 }
 </style>
