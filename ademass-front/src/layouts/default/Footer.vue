@@ -45,24 +45,7 @@
           <a href="#" class="text-white">Política de Privacidad</a>
           <a href="#" class="text-white">Avíso Legal</a>
         </div>
-        <div class="pt-2 ml-6 d-flex flex-column">
-          <p><strong>Horarios de Trabajo</strong></p>
-          <a class="text-white"
-            ><v-icon icon="mdi-timer" class="mr-2" />08:00 - 09:00</a
-          >
-          <a class="text-white"
-            ><v-icon icon="mdi-timer" class="mr-2" />10:00 - 11:00</a
-          >
-          <a class="text-white"
-            ><v-icon icon="mdi-timer" class="mr-2" />13:00 - 14:00</a
-          >
-          <a class="text-white"
-            ><v-icon icon="mdi-timer" class="mr-2" />14:00 - 15:00</a
-          >
-          <a class="text-white"
-            ><v-icon icon="mdi-timer" class="mr-2" />15:00 - 16:00</a
-          >
-        </div>
+
         <div class="imagen">
           <img src="@/assets/barbershop1.jpg" />
         </div>
