@@ -14,8 +14,8 @@
     "pinia": "^2.0.0",
     "qalendar": "^3.7.0",
     "roboto-fontface": "*",
-    "vue": "^3.4.5",
-    "vue-router": "^4.0.0",
+    "vue": "^3.4.18",
+    "vue-router": "^4.2.5",
     "vuetify": "^3.0.0"
   },
   "devDependencies": {
