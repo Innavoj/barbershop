@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAppStore } from '@/store/app'
+//import { useAppStore } from '@/store/app'
 
 const routes = [
   {
@@ -40,15 +40,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   },
   {
-    path: '/example',
-    name: 'example',
+    path: '/forgot-password',
+    name: 'forgot-password',
     meta: {
-      requiredAuth: true
+      requiredAuth: false
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ExampleView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/PasswordView.vue')
   }
 ]
 

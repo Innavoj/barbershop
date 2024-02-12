@@ -64,7 +64,7 @@ export const useAppStore = defineStore('app', {
 
       console.log(`El email es: ${email} y el password es: ${password}`)
 
-      const response: IResponse = { status: false}
+      const response: IResponse = { status: true}
       if (response.status === false) {
         //this.token = null
         return false
