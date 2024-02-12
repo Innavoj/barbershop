@@ -1,5 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/layouts/default/Home.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
         component: () => import('@/views/HomeView.vue'),
       },*/
     ],
+  },
+  {
+    path: '/mariana',
+    name: 'mariana',
+    component: Home,
   },
 ]
 
