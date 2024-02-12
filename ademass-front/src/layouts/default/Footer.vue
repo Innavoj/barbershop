@@ -45,10 +45,6 @@
           <a href="#" class="text-white">Política de Privacidad</a>
           <a href="#" class="text-white">Avíso Legal</a>
         </div>
-
-        <div class="imagen">
-          <img src="@/assets/barbershop1.jpg" />
-        </div>
       </div>
 
       <v-divider></v-divider>
