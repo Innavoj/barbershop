@@ -1,5 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+
+import Home from '@/layouts/default/Home.vue'
 //import { useAppStore } from '@/store/app'
 
 const routes = [
@@ -18,6 +20,10 @@ const routes = [
     ],
   },
   {
+    path: '/mariana',
+    name: 'mariana',
+    component: Home,
+  },
     path: '/register',
     name: 'register',
     meta: {
