@@ -24,7 +24,7 @@ const routes = [
     name: 'mariana',
     component: Home,
   },
-    path: '/register',
+    {path: '/register',
     name: 'register',
     meta: {
       requiredAuth: false

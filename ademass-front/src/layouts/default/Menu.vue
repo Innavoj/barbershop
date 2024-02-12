@@ -16,7 +16,7 @@
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/">
-          <v-list-item  prepend-icon="mdi-calendar-month" title="Ejemplo item menu" value="Ejemplo"></v-list-item>
+          <v-list-item  prepend-icon="mdi-calendar-month" title="Calendario" value="calendario"></v-list-item>
         </router-link>
         </v-list>
 
