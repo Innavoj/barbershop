@@ -7,7 +7,7 @@ import Home from '@/layouts/default/Home.vue'
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    component: () => import('@/layouts/default/Home.vue'),
     meta: {
       requiredAuth: true
     },
@@ -18,11 +18,6 @@ const routes = [
         component: () => import('@/views/HomeView.vue'),
       },*/
     ],
-  },
-  {
-    path: '/mariana',
-    name: 'mariana',
-    component: Home,
   },
     {path: '/register',
     name: 'register',

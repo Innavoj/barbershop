@@ -19,14 +19,12 @@
         </template>
         Cerrar Sesión
       </v-btn>
-
-
-
       </v-app-bar>
       <Menu></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col>
           <router-view />
+          <Footer/>
         </v-col>
       </v-main>
     </v-layout>
@@ -45,6 +43,7 @@
 import Menu from './layouts/default/Menu.vue'
 import { useRoute } from 'vue-router';
 import Login from './layouts/login/Login.vue'
+import Footer from './components/Footer.vue'
 
 const isLayoutA = () => {
   const route = useRoute();
