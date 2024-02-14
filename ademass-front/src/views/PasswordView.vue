@@ -1,4 +1,5 @@
 <template>
+  <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
     <v-sheet width="600" class="mx-auto">
     <v-btn type="submit" :to="{ name: 'login' }" prepend-icon="mdi-scissors-cutting" size="x-large" rounded="lg" block class="mt-2 bg-black" ><h1>BarberShop</h1></v-btn>
     <v-form class="mt-10 mb-5" @submit.prevent>
@@ -15,6 +16,7 @@
       <router-link class="custom-link" :to="{ name: 'login' }">¿Tienes una cuenta? Inicia Sesión</router-link>
     </nav>
   </v-sheet>
+</v-main>
 
 </template>
 

@@ -1,25 +1,20 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '@/layouts/default/Home.vue'
+import HomeView from '@/views/HomeView.vue'
 //import { useAppStore } from '@/store/app'
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Home.vue'),
+    name: 'home',
     meta: {
-      requiredAuth: true
+      requiredAuth: false
     },
-    children: [
-     /* {
-        path: '',
-        name: '/#',
-        component: () => import('@/views/HomeView.vue'),
-      },*/
-    ],
+    component: HomeView
   },
-    {path: '/register',
+  {
+    path: '/register',
     name: 'register',
     meta: {
       requiredAuth: false
@@ -50,7 +45,29 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/PasswordView.vue')
-  }
+  },
+  {
+    path: '/calendario',
+    name: 'calendario',
+    meta: {
+      requiredAuth: true
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/CalendarioView.vue')
+  },
+  {
+    path: '/mi-perfil',
+    name: 'mi-perfil',
+    meta: {
+      requiredAuth: true
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PerfilView.vue')
+  },
 ]
 
 

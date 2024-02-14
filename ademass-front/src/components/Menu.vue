@@ -15,26 +15,32 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
+          <router-link class="router-link" to="/mi-perfil">
+          <v-list-item prepend-icon="mdi-account-box" title="Mi perfil" value="Mi perfil"></v-list-item>
+        </router-link>
+        </v-list>
+
+        <v-list density="compact" nav>
           <router-link class="router-link" to="/calendario">
-          <v-list-item  prepend-icon="mdi-calendar-month" title="Calendario" value="calendario"></v-list-item>
+          <v-list-item prepend-icon="mdi-calendar-month" title="Calendario" value="calendario"></v-list-item>
         </router-link>
         </v-list>
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/">
-          <v-list-item  prepend-icon="mdi-lock" title="Contraseña" value="Contraseña"></v-list-item>
+          <v-list-item prepend-icon="mdi-lock" title="Contraseña" value="Contraseña"></v-list-item>
         </router-link>
         </v-list>
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/">
-          <v-list-item  prepend-icon="mdi-calendar-multiple-check" title="Citas" value="Citas"></v-list-item>
+          <v-list-item prepend-icon="mdi-calendar-multiple-check" title="Citas" value="Citas"></v-list-item>
         </router-link>
         </v-list>
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/">
-          <v-list-item  prepend-icon="mdi-cog" title="Settings" value="Ejemplo"></v-list-item>
+          <v-list-item prepend-icon="mdi-cog" title="Settings" value="Ejemplo"></v-list-item>
         </router-link>
         </v-list>
       </v-navigation-drawer>
