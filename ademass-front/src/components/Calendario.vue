@@ -2,7 +2,7 @@
   <div
     class="calendar"
     :style="{
-      backgroundColor: '#fff',
+      backgroundColor: 'white',
       color: 'violet',
     }"
   >
@@ -20,7 +20,7 @@ let events = ref([
     title: "Afeitado",
     with: "Chandler Bing",
     time: { start: "2024-02-13 20:00", end: "2024-02-16 21:00" },
-    color: "yellow",
+    colorScheme: "barber",
     isEditable: true,
     id: "1",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -29,7 +29,7 @@ let events = ref([
     title: "Arreglo de Barba",
     with: "Rachel Greene",
     time: { start: "2024-02-14 08:00", end: "2024-02-15 10:00" },
-    color: "green",
+    colorScheme: "sports",
     isEditable: true,
     id: "2",
   },
@@ -37,7 +37,7 @@ let events = ref([
     title: "Pelado Alto",
     with: "Rachel Greene",
     time: { start: "2024-02-14 15:00", end: "2024-02-15 16:00" },
-    color: "blue",
+    colorScheme: "meetings",
     isEditable: true,
     id: "3",
   },
@@ -49,12 +49,16 @@ let config = ref({
   style: {
     colorSchemes: {
       meetings: {
-        color: "#fff",
-        backgroundColor: "#131313",
+        color: "white",
+        backgroundColor: "blue",
       },
       sports: {
-        color: "#fff",
-        backgroundColor: "#ff4081",
+        color: "white",
+        backgroundColor: "green",
+      },
+      barber: {
+        color: "white",
+        backgroundColor: "gray",
       },
     },
   },
