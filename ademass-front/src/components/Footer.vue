@@ -82,6 +82,7 @@ export default {
 .main {
   position: static;
   background-color: black;
+  color: white;
 }
 .main .imagen {
   float: left;
@@ -93,9 +94,9 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   background-color: black;
-  justify-content: space-around;
   color: white;
 }
 .footer .contenedor1 {
@@ -104,9 +105,12 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
+  justify-content: center;
+  margin: 20px;
+
   margin-top: 2px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footer .contenedor2 {
@@ -116,8 +120,10 @@ export default {
   flex-wrap: wrap;
   text-align: center;
   margin-top: 2px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .footer .contenedor3 {
   position: relative;
@@ -126,8 +132,10 @@ export default {
   flex-wrap: wrap;
   text-align: center;
   margin-top: 2px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .footer .contenedor4 {
   position: relative;
@@ -136,8 +144,10 @@ export default {
   flex-wrap: wrap;
   text-align: center;
   margin-top: 2px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 p {
