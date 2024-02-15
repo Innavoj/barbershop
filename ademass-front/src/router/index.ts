@@ -1,62 +1,89 @@
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 //import { useAppStore } from '@/store/app'
 
 const routes = [
   {
-    path: '/',
-    component: () => import('@/layouts/default/Home.vue'),
+    path: "/",
+    component: () => import("@/layouts/default/Home.vue"),
     meta: {
-      requiredAuth: true
+      requiredAuth: true,
     },
     children: [
-     /* {
+      /* {
         path: '',
         name: '/#',
         component: () => import('@/views/HomeView.vue'),
       },*/
     ],
   },
-    {path: '/register',
-    name: 'register',
+  {
+    path: "/register",
+    name: "register",
     meta: {
-      requiredAuth: false
+      requiredAuth: false,
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/RegisterView.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/RegisterView.vue"),
   },
   {
-    path: '/login',
-    name: 'login',
+    path: "/login",
+    name: "login",
     meta: {
-      requiredAuth: false
+      requiredAuth: false,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/LoginView.vue"),
   },
   {
-    path: '/forgot-password',
-    name: 'forgot-password',
+    path: "/forgot-password",
+    name: "forgot-password",
     meta: {
-      requiredAuth: false
+      requiredAuth: false,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/PasswordView.vue')
-  }
-]
-
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/PasswordView.vue"),
+  },
+  {
+    path: "/calendario",
+    name: "calendario",
+    meta: {
+      requiredAuth: false,
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/CalendarioView.vue"),
+  },
+  {
+    path: "/miscitas",
+    name: "miscitas",
+    meta: {
+      requiredAuth: false,
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/MisCitasView.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-})
+});
 
 /*router.beforeEach((to,from,next) => {
   const auth = useAppStore()
@@ -68,4 +95,4 @@ const router = createRouter({
   }
 })*/
 
-export default router
+export default router;

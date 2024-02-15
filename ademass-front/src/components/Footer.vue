@@ -1,6 +1,12 @@
 <template>
-  <v-layout>
-    <v-footer class="bg-black text-center d-flex flex-column">
+  <v-layout class="main">
+    <img
+      class="imagen"
+      src="@/assets/barbershop1.jpg"
+      width="100"
+      height="100"
+    />
+    <v-footer class="footer">
       <div class="mt-4 mb-4">
         <v-btn
           id="btn-icons"
@@ -13,11 +19,8 @@
         ></v-btn>
       </div>
 
-      <div class="d-flex">
-        <div class="imagen">
-          <img src="@/assets/barbershop1.jpg" />
-        </div>
-        <div class="pt-2 d-flex flex-column">
+      <div class="contenedor1">
+        <div class="contenedor2">
           <p><strong>Contactos</strong></p>
           <a href="#" class="text-white"
             ><v-icon icon="mdi-cellphone-sound " class="mr-2" />+34 555 555
@@ -32,15 +35,15 @@
               class="mr-2"
             />barberjhon@barbershop.com</a
           >
-          <div class="mt-4 pt-4">
-            <p><strong>Únete a Nosotros</strong></p>
-            <a href="#" class="text-white"
-              ><v-icon icon="mdi-map-marker" class="mr-2" />Trabaja con
-              nosotros</a
-            >
-          </div>
         </div>
-        <div class="pt-2 ml-6 d-flex flex-column">
+        <div class="contenedor3">
+          <p><strong>Únete a Nosotros</strong></p>
+          <a href="#" class="text-white"
+            ><v-icon icon="mdi-map-marker" class="mr-2" />Trabaja con
+            nosotros</a
+          >
+        </div>
+        <div class="contenedor4">
           <p><strong>Legal</strong></p>
           <a href="#" class="text-white">Política de Privacidad</a>
           <a href="#" class="text-white">Avíso Legal</a>
@@ -49,7 +52,7 @@
 
       <v-divider></v-divider>
 
-      <div class="mt-4">
+      <div class="mt-6">
         {{ new Date().getFullYear() }} —
         <strong
           >Barbershop Copyright (R) Todos los Derechos Reservados. Version
@@ -76,10 +79,84 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  position: static;
+  background-color: black;
+  color: white;
+}
+.main .imagen {
+  float: left;
+  margin: 5px;
+  top: 5px;
+  left: 5px;
+}
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+  color: white;
+}
+.footer .contenedor1 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: 20px;
+
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footer .contenedor2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.footer .contenedor3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.footer .contenedor4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 p {
   color: cyan;
 }
 #btn-icons:hover {
-  color: aqua;
+  color: cyan;
+}
+a {
+  text-decoration: none;
 }
 </style>
