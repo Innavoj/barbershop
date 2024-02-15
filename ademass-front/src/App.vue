@@ -3,26 +3,26 @@
   <div v-if="isLayoutA()">
     <v-layout class="rounded rounded-md">
       <v-app-bar class="bg-black" title="BarberShop">
-      <v-btn
-        prepend-icon="mdi-account"
-      >
-        <template v-slot:prepend>
-          <v-icon color="success"></v-icon>
-        </template>
-        Hola Usuario
-      </v-btn>
-      <v-btn
-        prepend-icon="mdi-power"
-      >
-        <template v-slot:prepend>
-          <v-icon color="success"></v-icon>
-        </template>
-        Cerrar Sesión
-      </v-btn>
-      </v-app-bar>
-      <Menu></Menu>
+        <router-link class="router-link" to="/login" style="color: #fff;">
+          <v-btn prepend-icon="mdi mdi-login">
+            <template v-slot:prepend>
+              <v-icon color="primary"></v-icon>
+            </template>
+            Iniciar sesión
+          </v-btn>
+        </router-link>
+        <router-link class="router-link" to="/register" style="color: #fff;">
+          <v-btn prepend-icon="mdi mdi-account-plus">
+            <template v-slot:prepend>
+              <v-icon color="primary"></v-icon>
+            </template>
+            Regristrarse
+          </v-btn>
+        </router-link>
+    </v-app-bar>
+      <Menu v-if="!isLayoutA"></Menu>
       <v-main class="d-flex align-center justify-center">
-        <v-col>
+        <v-col class="pa-0">
           <router-view />
           <Footer/>
         </v-col>
@@ -47,6 +47,7 @@ import Footer from './components/Footer.vue'
 
 const isLayoutA = () => {
   const route = useRoute();
+  console.log('route', route);
   return route.meta.requiredAuth;
 };
 

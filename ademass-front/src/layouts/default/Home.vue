@@ -14,9 +14,15 @@
             </div>
         </div>
         <p class="social">
+          <router-link class="router-link" to="/" style="color: #fff;">
             <v-icon color="#fff">mdi-instagram</v-icon>
+          </router-link>
+          <router-link class="router-link" to="/" style="color: #fff;">
             <v-icon color="#fff">mdi-whatsapp</v-icon>
+          </router-link>
+          <router-link class="router-link" to="/" style="color: #fff;">
             <v-icon color="#fff">mdi-facebook-messenger</v-icon>
+          </router-link>
         </p>
     </div>
     <!--Imagen destacada-->
@@ -277,7 +283,7 @@
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
-    bottom: 10%;
+    bottom: 2rem;
     right: 0.5rem;
     padding: 0 !important;
     transition: all 1s ease;
@@ -288,6 +294,12 @@
   .social .v-icon:hover {
     transform: translateY(-4px);
   }
+  @media screen and (min-width:500px) {
+    .img {
+      clip-path: polygon(0% 72%, 25% 99%, 100% 75%, 100% 0%, 0% 0%);
+    }
+  }
+
   @media screen and (min-width:600px) {
     .slider-productos {
       max-width: 800px !important;
@@ -299,12 +311,13 @@
     }
     .v-icon {
       font-size: 2rem;
-      color: #33b5bd !important;
+      /*color: #33b5bd !important;*/
     }
+    /*
     .social .v-icon:hover {
       transform: translateX(-4px);
       color: #fff !important;
-    }
+    }*/
     .social {
         right: 1rem;
     }
@@ -324,14 +337,19 @@
       margin: 3rem;
     }
     .social {
+      bottom: 36%;
+      right: -1rem;
+    }
+    
+    /* .social {
       height: 60%;
       flex-direction: column;
       align-items: flex-end;
       padding: 2rem;
       top: 2%;
-    }
+    }*/
     .img {
-      clip-path: polygon(0% 55%, 25% 68%, 100% 55%, 100% 0%, 0% 0%);
+      clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
     }
   }
   </style>
