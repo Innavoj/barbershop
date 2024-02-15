@@ -1,7 +1,9 @@
 <template>
-  <v-card flat title="Citas Reservadas">
+  <v-container class="container-flex">
+  <v-card flat title="Mis Reservas">
     <v-data-table :headers="headers" :items="item" class="table"></v-data-table>
   </v-card>
+</v-container>
 </template>
 
 <script>
@@ -48,7 +50,8 @@ export default {
 .table {
   color: black;
   background-color: white;
-  width: 800px;
-  height: 400px;
+}
+.container-flex{
+  margin-top: 30px;
 }
 </style>

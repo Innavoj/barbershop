@@ -67,10 +67,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/CalendarView.vue"),
   },
   {
-    path: "/miscitas",
+    path: "/mis-citas",
     name: "miscitas",
     meta: {
-      requiredAuth: false,
+      requiredAuth: true,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route

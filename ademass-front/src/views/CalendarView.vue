@@ -1,7 +1,9 @@
 <template>
-  <div class="calendar">
+  <v-container>
+  <div class="calendar is-light-mode">
     <Qalendar :events="events" :config="config" />
   </div>
+</v-container>
 </template>
 
 <script lang="ts" setup>
@@ -54,10 +56,11 @@ let config = ref({
 <style>
 @import "qalendar/dist/style.css";
 
-.calendar {
-  color: black;
-  background-color: white;
-  width: 80%;
-  height: 80%;
+
+.calendar{
+   min-height: 80vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 </style>
