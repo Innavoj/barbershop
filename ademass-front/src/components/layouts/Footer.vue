@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="main">
+  <v-layout class="main" fluid>
     <img
       class="imagen"
       src="@/assets/img/barber1.png"
@@ -23,12 +23,12 @@
         <div class="contenedor2">
           <p><strong>Contactos</strong></p>
           <a href="#" class="text-white"
-            ><v-icon icon="mdi-cellphone-sound " class="mr-2" />+34 555 555
-            555</a
-          >
-          <a href="#" class="text-white"
             ><v-icon icon="mdi-account-tie" class="mr-2" />Barber Jhon</a
           >
+          <a href="#" class="text-white"
+            ><v-icon icon="mdi-cellphone-sound " class="mr-2" />+34 555 555
+            555</a
+          > 
           <a href="#" class="text-white"
             ><v-icon
               icon="mdi-email"
@@ -37,10 +37,15 @@
           >
         </div>
         <div class="contenedor3">
-          <p><strong>Únete a Nosotros</strong></p>
+          <p><strong>Sobre Nosotros</strong></p>
           <a href="#" class="text-white"
-            ><v-icon icon="mdi-map-marker" class="mr-2" />Trabaja con
-            nosotros</a
+            ><v-icon icon="mdi-map-marker" class="mr-2" />Donde Estamos</a
+          >
+          <a href="#" class="text-white"
+            ><v-icon
+              icon="mdi-email"
+              class="mr-2"
+            />Contrataciones@barbershop.com</a
           >
         </div>
         <div class="contenedor4">
