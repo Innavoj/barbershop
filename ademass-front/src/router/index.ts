@@ -6,7 +6,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    component: () => import("@/layouts/default/Home.vue"),
+    component: () => import("@/views/HomeView.vue"),
     meta: {
       requiredAuth: true,
     },
@@ -58,13 +58,13 @@ const routes = [
     path: "/calendario",
     name: "calendario",
     meta: {
-      requiredAuth: false,
+      requiredAuth: true,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/CalendarioView.vue"),
+      import(/* webpackChunkName: "about" */ "../views/CalendarView.vue"),
   },
   {
     path: "/miscitas",
@@ -78,6 +78,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/MisCitasView.vue"),
   },
+  {
+    path: '/mi-perfil',
+    name: 'mi-perfil',
+    meta: {
+      requiredAuth: true
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+    import("@/views/PerfilView.vue")
+  }
 ];
 
 const router = createRouter({

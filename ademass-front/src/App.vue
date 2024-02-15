@@ -1,7 +1,7 @@
 <template>
   <div v-if="isLayoutA()">
     <v-layout class="rounded rounded-md">
-      <v-app-bar class="bg-black" title="BarberShop">
+      <v-app-bar class="custom-bg-color" title="BarberShop">
         <router-link class="router-link" to="/login" style="color: #fff;">
           <v-btn prepend-icon="mdi mdi-login">
             <template v-slot:prepend>
@@ -19,7 +19,7 @@
           </v-btn>
         </router-link>
     </v-app-bar>
-      <Menu v-if="!isLayoutA"></Menu>
+      <Menu v-if="!isLayoutA()" ></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col class="pa-0">
           <router-view />
@@ -41,8 +41,9 @@
 <script setup lang="ts">
 
 import { useRoute } from 'vue-router';
-import Login from './layouts/login/Login.vue'
-import DashBoard from './layouts/dashboard/Dashboard.vue'
+import Login from '@/components/login/Login.vue'
+import Footer from '@/components/layouts/Footer.vue'
+import Menu from './components/layouts/Menu.vue';
 
 const isLayoutA = () => {
   const route = useRoute();
@@ -64,6 +65,10 @@ const isLayoutA = () => {
 .custom-link {
   text-decoration: none;
   color: var(--aqua);
+}
+.custom-bg-color {
+  background-color: rgb(80, 75, 75)!important;
+  color: white!important;
 }
 
 nav {

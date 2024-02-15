@@ -2,7 +2,7 @@
   <v-layout class="main">
     <img
       class="imagen"
-      src="@/assets/barbershop1.jpg"
+      src="@/assets/img/barber1.png"
       width="100"
       height="100"
     />
@@ -81,8 +81,9 @@ export default {
 <style scoped>
 .main {
   position: static;
-  background-color: black;
+  background-color: rgb(80, 75, 75);
   color: white;
+  margin-top: 30px;
 }
 .main .imagen {
   float: left;
@@ -96,7 +97,7 @@ export default {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: rgb(80, 75, 75);
   color: white;
 }
 .footer .contenedor1 {

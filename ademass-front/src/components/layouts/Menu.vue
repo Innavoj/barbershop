@@ -3,7 +3,7 @@
         expand-on-hover
         rail
         permanent
-       class="bg-black">
+        class="custom-bg-color">
         <v-list>
           <v-list-item
             prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
@@ -13,6 +13,11 @@
         </v-list>
 
         <v-divider></v-divider>
+        <v-list density="compact" nav>
+          <router-link class="router-link" to="/">
+          <v-list-item prepend-icon="mdi-home" title="Inicio" value="Inicio"></v-list-item>
+        </router-link>
+        </v-list>
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/mi-perfil">
@@ -52,5 +57,8 @@
 .router-link {
   text-decoration: none;
   color: inherit;
+}
+.custom-bg-color {
+  background-color: rgb(80, 75, 75);
 }
 </style>
