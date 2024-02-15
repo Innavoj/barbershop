@@ -67,6 +67,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/CalendarioView.vue"),
   },
+  {
+    path: "/miscitas",
+    name: "miscitas",
+    meta: {
+      requiredAuth: false,
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/MisCitasView.vue"),
+  },
 ];
 
 const router = createRouter({

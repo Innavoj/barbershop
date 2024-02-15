@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="calendar"
-    :style="{
-      backgroundColor: 'white',
-      color: 'violet',
-    }"
-  >
+  <div class="calendar">
     <Qalendar :events="events" :config="config" />
   </div>
 </template>
@@ -20,7 +14,7 @@ let events = ref([
     title: "Afeitado",
     with: "Chandler Bing",
     time: { start: "2024-02-13 20:00", end: "2024-02-16 21:00" },
-    colorScheme: "barber",
+    colorScheme: "meetings",
     isEditable: true,
     id: "1",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -29,7 +23,7 @@ let events = ref([
     title: "Arreglo de Barba",
     with: "Rachel Greene",
     time: { start: "2024-02-14 08:00", end: "2024-02-15 10:00" },
-    colorScheme: "sports",
+    colorScheme: "meetings",
     isEditable: true,
     id: "2",
   },
@@ -50,15 +44,7 @@ let config = ref({
     colorSchemes: {
       meetings: {
         color: "white",
-        backgroundColor: "blue",
-      },
-      sports: {
-        color: "white",
-        backgroundColor: "green",
-      },
-      barber: {
-        color: "white",
-        backgroundColor: "gray",
+        backgroundColor: "#3bb8c0",
       },
     },
   },
@@ -69,7 +55,9 @@ let config = ref({
 @import "qalendar/dist/style.css";
 
 .calendar {
-  max-width: 50%;
-  height: 500px;
+  color: black;
+  background-color: white;
+  width: 80%;
+  height: 80%;
 }
 </style>
