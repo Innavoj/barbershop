@@ -12,7 +12,7 @@
     <v-card
       class="ma-4 d-column flex-wrap justify-start"
       elevation="2"
-      max-width="40vw"
+      width="40vw"
     >
       <v-card-title>Experiencia general:</v-card-title>
       <v-card-text>
