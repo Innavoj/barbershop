@@ -67,6 +67,18 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/CalendarView.vue"),
   },
   {
+    path: "/encuesta",
+    name: "encuesta",
+    meta: {
+      requiredAuth: true,
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/EncuestaView.vue"),
+  },
+  {
     path: "/mis-citas",
     name: "miscitas",
     meta: {
@@ -79,17 +91,16 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/MisCitasView.vue"),
   },
   {
-    path: '/mi-perfil',
-    name: 'mi-perfil',
+    path: "/mi-perfil",
+    name: "mi-perfil",
     meta: {
-      requiredAuth: true
+      requiredAuth: true,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-    import("@/views/PerfilView.vue")
-  }
+    component: () => import("@/views/PerfilView.vue"),
+  },
 ];
 
 const router = createRouter({

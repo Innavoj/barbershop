@@ -1,9 +1,10 @@
 <template>
   <v-container>
-  <div class="calendar is-light-mode">
-    <Qalendar :events="events" :config="config" />
-  </div>
-</v-container>
+    <h1>Reserva tu cita</h1>
+    <div class="calendar is-light-mode">
+      <Qalendar :events="events" :config="config" />
+    </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
@@ -56,11 +57,10 @@ let config = ref({
 <style>
 @import "qalendar/dist/style.css";
 
-
-.calendar{
-   min-height: 80vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+.calendar {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
