@@ -6,7 +6,9 @@
     max-width="90vw"
     color="grey-lighten-2"
   >
-    <h1 class="text-center">Encuesta de satisfación</h1>
+    <h1 class="text-center">
+      <v-icon icon="mdi-playlist-check" /> Encuesta de satisfación
+    </h1>
     <v-divider></v-divider>
     <v-form class="d-flex flex-wrap justify-center mx-auto mt-4">
       <!-- Primera Tarjeta Encuesta-->
@@ -29,11 +31,13 @@
         <v-card-text>
           ¿Con qué frecuencia visita nuestra peluquería?
         </v-card-text>
-        <v-select
-          label="Select"
-          :items="frecuencia"
-          variant="solo-filled"
-        ></v-select>
+        <v-col col="10" sm="6">
+          <v-select
+            label="Select"
+            :items="frecuencia"
+            variant="solo-filled"
+          ></v-select>
+        </v-col>
         <v-card-text>
           ¿Recomendaría nuestra peluquería a amigos/familiares?
         </v-card-text>
@@ -58,7 +62,14 @@
           <v-radio label="Mala" value="Mala"></v-radio>
         </v-radio-group>
         <v-card-text> Tiempo de espera. </v-card-text>
-        <v-text-field v-model="tiempo" label="Tiempo"></v-text-field>
+        <v-col col="10" sm="6">
+          <v-text-field
+            prepend-icon="mdi-timer"
+            type="time"
+            v-model="tiempo"
+            label="Tiempo"
+          ></v-text-field>
+        </v-col>
         <v-card-text> Amabilidad y profesionalismo del personal. </v-card-text>
         <v-radio-group v-model="amable" inline>
           <v-radio label="Amable - Profesional" value="AP"></v-radio>
@@ -133,10 +144,14 @@
         <v-card-text>
           ¿El resultado final cumplió con sus expectativas?
         </v-card-text>
-        <v-textarea
-          label="escriba sus expectativas"
-          v-model="espectativas"
-        ></v-textarea>
+        <v-col col="12" sm="11">
+          <v-textarea
+            prepend-icon=" mdi-message-processing"
+            clearable
+            label="escriba sus expectativas"
+            v-model="espectativas"
+          ></v-textarea>
+        </v-col>
       </v-card>
       <!-- Sexta Tarjeta Encuesta-->
       <v-card
@@ -147,15 +162,25 @@
         <v-card-title>Comentarios adicionales:</v-card-title>
         <v-divider></v-divider>
         <v-card-text> Comentarios: </v-card-text>
-        <v-textarea
-          label="escriba sus comentarios"
-          v-model="comentarios"
-        ></v-textarea>
+        <v-col col="12" sm="11">
+          <v-textarea
+            prepend-icon="mdi-comment"
+            clearable
+            label="escriba sus comentarios"
+            v-model="comentarios"
+            variant="outlined"
+          ></v-textarea>
+        </v-col>
         <v-card-text> Sugerencias: </v-card-text>
-        <v-textarea
-          label="algunas sugerencias"
-          v-model="sugerencias"
-        ></v-textarea>
+        <v-col col="12" sm="11">
+          <v-textarea
+            prepend-icon="mdi-comment"
+            clearable
+            label="algunas sugerencias"
+            v-model="sugerencias"
+            variant="outlined"
+          ></v-textarea>
+        </v-col>
       </v-card>
       <v-divider></v-divider>
       <v-tooltip :location="location" :origin="origin" no-click-animation>
