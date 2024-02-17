@@ -33,7 +33,7 @@
         </v-card-text>
         <v-col col="10" sm="6">
           <v-select
-            label="Select"
+            label="Frecuencia"
             :items="frecuencia"
             variant="solo-filled"
           ></v-select>
