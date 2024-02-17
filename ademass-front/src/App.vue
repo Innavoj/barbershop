@@ -19,7 +19,7 @@
           </v-btn>
         </router-link>
     </v-app-bar>
-      <Menu v-if="!isLayoutA()" ></Menu>
+      <Menu v-if="isLayoutA()" ></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col class="pa-0">
           <router-view />
