@@ -3,15 +3,19 @@
 
 
     <v-form>
-      <v-row align="center" class="flex-container">
+      <v-row align="center" justify="center" >
 
-        <v-file-input label="Añadir una imagen"></v-file-input>
+        <div class="flex-container">
+          <label for="fileInput" class="avatar-label">
+            <v-icon class="custom-icon" size="x-large">mdi-swap-horizontal</v-icon>
+            <v-avatar class="profile-avatar">
+            </v-avatar>
+            <v-file-input id="fileInput" class="profile-input"></v-file-input>
+          </label>
+        </div>
 
-        <v-avatar class="profile-avatar" :style="{ backgroundImage: `url('${imagen ? URL.createObjectURL(imagen) : ''}')` }">
-          <v-icon>mdi-account-circle</v-icon> <!-- Icono de usuario por defecto -->
-        </v-avatar>
 
-    </v-row>
+      </v-row>
       <v-row>
         <v-col>
           <v-text-field label="Email" type="email"></v-text-field>
@@ -38,7 +42,7 @@
 
       <v-row>
         <v-col>
-          <v-btn type="submit" color="primary">Aplicar Cambios</v-btn>
+          <v-btn type="submit" color="primary">Actualizar</v-btn>
         </v-col>
       </v-row>
     </v-form>
@@ -56,19 +60,45 @@ const imagen = ref(null);
 <style scoped>
 .flex-container {
   display: flex;
-  align-items: end;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-avatar {
   width: 100px; /* Ajusta el tamaño según sea necesario */
   height: 100px; /* Ajusta el tamaño según sea necesario */
   border-radius: 50%;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: url('https://randomuser.me/api/portraits/women/85.jpg');
+  background-size: cover;
+  background-position: center;
 }
+
+.profile-input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.avatar-label {
+  position: relative;
+}
+
+.custom-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 1;
+}
+
+
 
 /* Estilos adicionales para el formulario, ajusta según sea necesario */
 v-form {
