@@ -44,14 +44,14 @@
         </v-list>
 
         <v-list density="compact" nav>
-          <router-link class="router-link" to="/">
-          <v-list-item prepend-icon="mdi-cog" title="Settings" value="Ejemplo"></v-list-item>
+          <router-link class="router-link" to="/producto">
+          <v-list-item prepend-icon="mdi-cart" title="Producto" value="Ejemplo"></v-list-item>
         </router-link>
         </v-list>
 
         <v-list density="compact" nav>
-          <router-link class="router-link" to="/producto">
-          <v-list-item prepend-icon="mdi-cog" title="Producto" value="Ejemplo"></v-list-item>
+          <router-link class="router-link" to="/servicios">
+          <v-list-item prepend-icon="mdi-tools" title="Servicios" value="Ejemplo"></v-list-item>
         </router-link>
         </v-list>
       </v-navigation-drawer>
