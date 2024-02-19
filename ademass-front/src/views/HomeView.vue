@@ -5,31 +5,31 @@
         <v-img class="img" aspect-ratio="16/9" cover src="https://firebasestorage.googleapis.com/v0/b/bd-audios.appspot.com/o/barbero-que-afeita-cuello-cliente.jpg?alt=media&token=1feb5965-294e-4c37-abcf-08e2bdb57c9f"></v-img>
         <div class="dark">
             <div class="d-flex flex-column fill-height justify-center align-center text-white pb-6 div-text">
-                <h1 class="text-h4 mb-4">
+                <h1 class="text-h4 mb-4 fade-show">
                     Title
                 </h1>
-                <p class="mb-2">
+                <p class="mb-2 fade-show">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, laudantium!
                 </p>
             </div>
         </div>
         <p class="social">
-          <router-link class="router-link" to="/" style="color: #fff;">
-            <v-icon color="#fff">mdi-instagram</v-icon>
-          </router-link>
-          <router-link class="router-link" to="/" style="color: #fff;">
-            <v-icon color="#fff">mdi-whatsapp</v-icon>
-          </router-link>
-          <router-link class="router-link" to="/" style="color: #fff;">
-            <v-icon color="#fff">mdi-facebook-messenger</v-icon>
-          </router-link>
+          <a class="router-link" href="#" style="color: #fff;">
+            <v-icon color="#fff" class="fade-show-icons-1">mdi-instagram</v-icon>
+          </a>
+          <a class="router-link" href="#" style="color: #fff;">
+            <v-icon color="#fff" class="fade-show-icons-2">mdi-whatsapp</v-icon>
+          </a>
+          <a class="router-link" href="#" style="color: #fff;">
+            <v-icon color="#fff" class="fade-show-icons-3">mdi-facebook-messenger</v-icon>
+          </a>
         </p>
     </div>
     <!--Imagen destacada-->
 
     <!--Servicios-->
-    <h1 class="text-h4 mb-4 mt-6 title-servicios text-center">Servicios</h1>
-    <v-row class="servicios">
+    <h1 class="text-h4 mb-4 mt-6 title-servicios text-center fade-show">Servicios</h1>
+    <v-row class="servicios fade-show">
         <v-col v-for="(servicio, index) in servicios" :key="index" cols="12" sm="6" class="mb-6">
             <v-card :prepend-icon="servicio.icono" :title="servicio.titulo">
                 <div class="d-flex flex-no-wrap justify-space-evenly align-center pa-0 pb-2">
@@ -62,7 +62,7 @@
     <!--Servicios-->
   
     <!--Productos-->
-    <v-layout class="d-flex flex-column align-center section-clip-path pt-12 pb-16">
+    <v-layout class="d-flex flex-column align-center section-clip-path pt-12 pb-16 fade-show">
         <h1 class="text-h4 mb-4 pt-6 pb-3 mt-2">Productos</h1>
       <div class="slider">
         <v-sheet
@@ -100,7 +100,7 @@
     <!--Productos-->
     
     <!--Nosotros-->
-    <v-sheet class="pb-12">
+    <v-sheet class="pb-12 fade-show">
       <h1 class="text-h4 mb-4 mt-6 text-center pb-6">Nosotros</h1>
       <v-card-text class="pb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!</v-card-text>
       <v-row class='d-flex align-center justify-center text-center ma-0'>
@@ -111,15 +111,22 @@
             :class="{ 'on-hover': isHovering }"
             class="mx-auto"
             height="350"
-            width="100%"
+            width="300"
             v-bind="props"
             >
-              <v-img class="align-end text-white" height="200" src="https://cdn.vuetifyjs.com/images/john.jpg" cover>
+              <v-img
+                class="align-end text-white w-auto"
+                height="200"
+                width="400"
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                cover
+              >
               </v-img>
               <v-card-title>Nombre</v-card-title>
               <v-card-text>
+                <div>Cargo</div>
+
                 <div>Descripción</div>
-                <div>Whitsunday Island, Whitsunday Islands</div>
               </v-card-text>
             </v-card>
           </v-hover>
@@ -131,15 +138,22 @@
             :class="{ 'on-hover': isHovering }"
             class="mx-auto"
             height="350"
-            width="100%"
+            width="300"
             v-bind="props"
             >
-              <v-img class="align-end text-white" height="200" src="https://cdn.vuetifyjs.com/images/john.jpg" cover>
+              <v-img
+                class="align-end text-white w-auto"
+                height="200"
+                width="400"
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                cover
+              >
               </v-img>
               <v-card-title>Nombre</v-card-title>
               <v-card-text>
+                <div>Cargo</div>
+
                 <div>Descripción</div>
-                <div>Whitsunday Island, Whitsunday Islands</div>
               </v-card-text>
             </v-card>
           </v-hover>
@@ -151,15 +165,49 @@
             :class="{ 'on-hover': isHovering }"
             class="mx-auto"
             height="350"
-            width="100%"
+            width="300"
             v-bind="props"
             >
-              <v-img class="align-end text-white" height="200" src="https://cdn.vuetifyjs.com/images/john.jpg" cover>
+              <v-img
+                class="align-end text-white w-auto"
+                height="200"
+                width="400"
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                cover
+              >
               </v-img>
               <v-card-title>Nombre</v-card-title>
               <v-card-text>
+                <div>Cargo</div>
+
                 <div>Descripción</div>
-                <div>Whitsunday Island, Whitsunday Islands</div>
+              </v-card-text>
+            </v-card>
+          </v-hover>
+        </v-col>
+        <v-col cols="12" sm="6" class="d-flex justify-center w-auto">
+          <v-hover v-slot="{ isHovering, props }" close-delay="200">
+            <v-card
+            :elevation="isHovering ? 16 : 2"
+            :class="{ 'on-hover': isHovering }"
+            class="mx-auto"
+            height="350"
+            width="300"
+            v-bind="props"
+            >
+              <v-img
+                class="align-end text-white w-auto"
+                height="200"
+                width="400"
+                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                cover
+              >
+              </v-img>
+              <v-card-title>Nombre</v-card-title>
+              <v-card-text>
+                <div>Cargo</div>
+
+                <div>Descripción</div>
               </v-card-text>
             </v-card>
           </v-hover>
@@ -169,7 +217,7 @@
     <!--Nosotros-->
     
     <!--Opiniones-->
-    <v-sheet class="pb-12">
+    <v-sheet class="pb-12 fade-show">
         <h1 class="text-h4 mb-4 pt-6 pb-8 mt-2">Opiniones</h1>
         <v-card
     class="d-flex flex-column mx-auto py-8 pb-3"
@@ -238,7 +286,7 @@
   const model: Ref<string> = ref('')
   </script>
   <style scoped>
-
+    
   .btn:focus {
     outline: none !important;
   }
@@ -250,6 +298,22 @@
     position: absolute;
     clip-path: polygon(0% 90%, 25% 99.9%, 100% 93%, 100% 0%, 0% 0%);
     background-color: rgba(0, 0, 0, 0.42);
+    animation: clipPath 2s ease-in;
+  }
+  .fade-show {
+    animation: show 2s ease-in;
+  }
+  .fade-show-icons-1 {
+    animation: showIcons 1.7s ease-in;
+    animation-delay: 1s;
+  }
+  .fade-show-icons-2 {
+    animation: showIcons 1.7s ease-in;
+    animation-delay: 1.3s;
+  }
+  .fade-show-icons-3 {
+    animation: showIcons 1.7s ease-in;
+    animation-delay: 1.4s;
   }
   .img-container h1, .img-container p {
     padding-left: 2rem;
@@ -294,6 +358,38 @@
   .social .v-icon:hover {
     transform: translateY(-4px);
   }
+  /** Animaciones **/
+  @keyframes clipPath {
+    from {
+      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes showIcons {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  /** Animaciones **/
+
   @media screen and (min-width:500px) {
     .img {
       clip-path: polygon(0% 72%, 25% 99%, 100% 75%, 100% 0%, 0% 0%);
@@ -340,6 +436,16 @@
       bottom: 36%;
       right: -1rem;
     }
+      /** Animaciones **/
+  @keyframes clipPath {
+    from {
+      clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
+    }
+    to {
+      clip-path: polygon(0% 65%, 25% 68%, 100% 65%, 100% 0%, 0% 0%);
+    }
+  }
+  /** Animaciones **/
     
     /* .social {
       height: 60%;
@@ -350,6 +456,14 @@
     }*/
     .img {
       clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
+    }
+    .card-nosotros {
+      height: 450px !important;
+    }
+  }
+  @media screen and (min-width: 1500px){
+    .v-icon {
+      font-size: 3rem;
     }
   }
   </style>

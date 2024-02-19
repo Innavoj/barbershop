@@ -14,8 +14,22 @@ const routes = [
       /* {
         path: '',
         name: '/#',
-        component: () => import('@/views/HomeView.vue'),
+        // component: () => import('@/views/HomeView.vue'),
       },*/
+    ],
+  },
+  {
+    path: "/equipo",
+    component: () => import("@/views/EquipoView.vue"),
+    meta: {
+      requiredAuth: true,
+    },
+    children: [
+      {
+        path: '',
+        name: '/',
+        component: () => import('@/views/HomeView.vue'),
+      },
     ],
   },
   {
