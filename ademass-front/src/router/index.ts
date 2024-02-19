@@ -89,6 +89,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
     import("@/views/PerfilView.vue")
+  },
+  {
+    path: '/producto',
+    name: 'producto',
+    meta: {
+      requiredAuth: true
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+    import("@/views/ProductoView.vue")
   }
 ];
 

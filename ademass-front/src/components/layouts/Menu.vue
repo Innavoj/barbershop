@@ -48,6 +48,12 @@
           <v-list-item prepend-icon="mdi-cog" title="Settings" value="Ejemplo"></v-list-item>
         </router-link>
         </v-list>
+
+        <v-list density="compact" nav>
+          <router-link class="router-link" to="/producto">
+          <v-list-item prepend-icon="mdi-cog" title="Producto" value="Ejemplo"></v-list-item>
+        </router-link>
+        </v-list>
       </v-navigation-drawer>
 </template>
 <script setup lang="ts">
