@@ -30,28 +30,26 @@
           <v-list-item prepend-icon="mdi-calendar-month" title="Calendario" value="calendario"></v-list-item>
         </router-link>
         </v-list>
-
-        <v-list density="compact" nav>
-          <router-link class="router-link" to="/">
-          <v-list-item prepend-icon="mdi-lock" title="Contraseña" value="Contraseña"></v-list-item>
-        </router-link>
-        </v-list>
-
+        
         <v-list density="compact" nav>
           <router-link class="router-link" to="/mis-citas">
           <v-list-item prepend-icon="mdi-calendar-multiple-check" title="Citas" value="Citas"></v-list-item>
         </router-link>
         </v-list>
-
+        <v-list density="compact" nav>
+          <router-link class="router-link" to="/servicios">
+          <v-list-item prepend-icon="mdi-tools" title="Servicios" value="Servicios"></v-list-item>
+        </router-link>
+        </v-list>
         <v-list density="compact" nav>
           <router-link class="router-link" to="/producto">
-          <v-list-item prepend-icon="mdi-cart" title="Producto" value="Ejemplo"></v-list-item>
+          <v-list-item prepend-icon="mdi-cart" title="Productos" value="Servicios"></v-list-item>
         </router-link>
         </v-list>
 
         <v-list density="compact" nav>
-          <router-link class="router-link" to="/servicios">
-          <v-list-item prepend-icon="mdi-tools" title="Servicios" value="Ejemplo"></v-list-item>
+          <router-link class="router-link" to="/encuesta">
+          <v-list-item prepend-icon="mdi-lock" title="Encuesta" value="encuesta"></v-list-item>
         </router-link>
         </v-list>
       </v-navigation-drawer>

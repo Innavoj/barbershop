@@ -117,6 +117,18 @@ const routes = [
     import("@/views/PerfilView.vue")
   },
   {
+    path: "/encuesta",
+    name: "encuesta",
+    meta: {
+      requiredAuth: true,
+    },
+    // route level code-splittingyarn
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+    import("@/views/EncuestaView.vue")
+  },
+  {
     path: '/producto',
     name: 'producto',
     meta: {
@@ -134,6 +146,7 @@ const routes = [
     meta: {
       requiredAuth: true
     },
+    
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
