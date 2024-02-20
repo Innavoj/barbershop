@@ -8,3 +8,6 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+@use 'vuetify/settings' with (
+    $list-item-icon-opacity: 1.0
+);
