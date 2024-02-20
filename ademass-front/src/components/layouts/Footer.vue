@@ -7,7 +7,7 @@
       height="100"
     />
     <v-footer class="footer">
-      <div class="mt-4 mb-4">
+      <div class="icons">
         <v-btn
           id="btn-icons"
           v-for="icon in icons"
@@ -28,7 +28,7 @@
           <a href="#" class="text-white"
             ><v-icon icon="mdi-cellphone-sound " class="mr-2" />+34 555 555
             555</a
-          > 
+          >
           <a href="#" class="text-white"
             ><v-icon
               icon="mdi-email"
@@ -57,7 +57,7 @@
 
       <v-divider></v-divider>
 
-      <div class="mt-6">
+      <div class="copyright">
         {{ new Date().getFullYear() }} —
         <strong
           >Barbershop Copyright (R) Todos los Derechos Reservados. Version
@@ -85,17 +85,23 @@ export default {
 
 <style scoped>
 .main {
-  position: static;
+  position: relative;
   background-color: rgb(80, 75, 75);
   color: white;
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .main .imagen {
   float: left;
   margin: 5px;
   top: 5px;
   left: 5px;
+  flex-wrap: wrap;
+  text-align: center;
 }
+
 .footer {
   position: relative;
   display: flex;
@@ -113,7 +119,6 @@ export default {
   text-align: center;
   justify-content: center;
   margin: 20px;
-
   margin-top: 2px;
   margin-left: 10px;
   margin-right: 10px;
@@ -155,13 +160,29 @@ export default {
   padding-right: 20px;
   padding-left: 20px;
 }
-
-p {
-  color: cyan;
+.icons {
+  position: relative;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+#btn-icons {
+  position: relative;
+  flex-wrap: wrap;
 }
 #btn-icons:hover {
   color: cyan;
 }
+.copyright {
+  position: relative;
+  flex-wrap: wrap;
+
+  margin-top: 6px;
+}
+p {
+  color: cyan;
+}
+
 a {
   text-decoration: none;
 }
