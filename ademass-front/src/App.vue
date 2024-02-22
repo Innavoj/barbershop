@@ -76,6 +76,14 @@ nav {
   justify-content: space-between;
 }
 
+/* Utilidades */
+.text-center{
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
 </style>
 
 

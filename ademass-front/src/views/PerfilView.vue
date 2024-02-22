@@ -98,8 +98,6 @@ const imagen = ref(null);
   z-index: 1;
 }
 
-
-
 /* Estilos adicionales para el formulario, ajusta según sea necesario */
 v-form {
   margin-top: 20px;
