@@ -1,14 +1,14 @@
 <template>
-    <v-app class="text-center">
+    <v-app class="text-center fade-show">
     <!--Imagen destacada-->
     <div class="img-container">
         <v-img class="img" aspect-ratio="16/9" cover src="https://firebasestorage.googleapis.com/v0/b/bd-audios.appspot.com/o/barbero-que-afeita-cuello-cliente.jpg?alt=media&token=1feb5965-294e-4c37-abcf-08e2bdb57c9f"></v-img>
         <div class="dark">
             <div class="d-flex flex-column fill-height justify-center align-center text-white pb-6 div-text">
-                <h1 class="text-h4 mb-4 fade-show">
+                <h1 class="text-h4 mb-4">
                     Title
                 </h1>
-                <p class="mb-2 fade-show">
+                <p class="mb-2">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, laudantium!
                 </p>
             </div>
@@ -28,8 +28,8 @@
     <!--Imagen destacada-->
 
     <!--Servicios-->
-    <h1 class="text-h4 mb-4 mt-6 title-servicios text-center fade-show">Servicios</h1>
-    <v-row class="servicios fade-show">
+    <h1 class="text-h4 mb-4 mt-6 title-servicios text-center">Servicios</h1>
+    <v-row class="servicios">
         <v-col v-for="(servicio, index) in servicios" :key="index" cols="12" sm="6" class="mb-6">
             <v-card :prepend-icon="servicio.icono" :title="servicio.titulo">
                 <div class="d-flex flex-no-wrap justify-space-evenly align-center pa-0 pb-2">
@@ -62,9 +62,9 @@
     <!--Servicios-->
   
     <!--Productos-->
-    <v-layout class="d-flex flex-column align-center section-clip-path pt-12 pb-16 fade-show">
+    <v-layout class="d-flex flex-column align-center section-clip-path pt-12 pb-16 pa-3">
         <h1 class="text-h4 mb-4 pt-6 pb-3 mt-2">Productos</h1>
-      <div class="slider">
+      <div class="slider w-100">
         <v-sheet
       class="mx-auto slider-productos"
       max-height="360"
@@ -89,7 +89,7 @@
           >
           <v-img aspect-ratio="4/9" cover src="https://cdn.vuetifyjs.com/images/cards/cooking.png" class="w-100"></v-img>
           <p class="text-body-2 pa-2">Lorem ipsum dolor sit amet consectetur</p>
-          <v-btn><v-icon color="#33b5bd">mdi-shopping</v-icon>Pedir</v-btn>
+          <v-btn prepend-icon="mdi-shopping" color="#33b5bd">Pedir</v-btn>
             
           </v-card>
         </v-slide-group-item>
@@ -100,124 +100,32 @@
     <!--Productos-->
     
     <!--Nosotros-->
-    <v-sheet class="pb-12 fade-show">
+    <v-sheet class="pb-12 fade-show ma-3">
       <h1 class="text-h4 mb-4 mt-6 text-center pb-6">Nosotros</h1>
       <v-card-text class="pb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!</v-card-text>
-      <v-row class='d-flex align-center justify-center text-center ma-0'>
-        <v-col cols="12" sm="6" class="d-flex justify-center w-auto">
-          <v-hover v-slot="{ isHovering, props }" close-delay="200">
+      <div class="grid w-100">
+        <v-hover v-for="n in 5"
+            :key="n" v-slot="{ isHovering, props }" close-delay="200">
             <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            class="mx-auto"
-            height="350"
-            width="300"
-            v-bind="props"
+              color="#ccc"
+              theme="dark"
+              :elevation="isHovering ? 16 : 2"
+              :class="{'on-hover': isHovering }"
+              class="my-12 text-left pa-2 pb-2 mx-auto"
+              width="100%"
+              v-bind="props"
             >
-              <v-img
-                class="align-end text-white w-auto"
-                height="200"
-                width="400"
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                cover
-              >
-              </v-img>
-              <v-card-title>Nombre</v-card-title>
-              <v-card-text>
-                <div>Cargo</div>
-
-                <div>Descripción</div>
-              </v-card-text>
+              <v-img aspect-ratio="4/9" cover src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg" class="w-100"></v-img>
+              <p class="text-h6 pa-2">Nombre</p>
+              <p class="text-body-2 pa-2">Lorem ipsum dolor sit amet consectetur</p>
             </v-card>
-          </v-hover>
-        </v-col>
-        <v-col cols="12" sm="6" class="d-flex justify-center w-auto">
-          <v-hover v-slot="{ isHovering, props }" close-delay="200">
-            <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            class="mx-auto"
-            height="350"
-            width="300"
-            v-bind="props"
-            >
-              <v-img
-                class="align-end text-white w-auto"
-                height="200"
-                width="400"
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                cover
-              >
-              </v-img>
-              <v-card-title>Nombre</v-card-title>
-              <v-card-text>
-                <div>Cargo</div>
-
-                <div>Descripción</div>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col>
-        <v-col cols="12" sm="6" class="d-flex justify-center w-auto">
-          <v-hover v-slot="{ isHovering, props }" close-delay="200">
-            <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            class="mx-auto"
-            height="350"
-            width="300"
-            v-bind="props"
-            >
-              <v-img
-                class="align-end text-white w-auto"
-                height="200"
-                width="400"
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                cover
-              >
-              </v-img>
-              <v-card-title>Nombre</v-card-title>
-              <v-card-text>
-                <div>Cargo</div>
-
-                <div>Descripción</div>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col>
-        <v-col cols="12" sm="6" class="d-flex justify-center w-auto">
-          <v-hover v-slot="{ isHovering, props }" close-delay="200">
-            <v-card
-            :elevation="isHovering ? 16 : 2"
-            :class="{ 'on-hover': isHovering }"
-            class="mx-auto"
-            height="350"
-            width="300"
-            v-bind="props"
-            >
-              <v-img
-                class="align-end text-white w-auto"
-                height="200"
-                width="400"
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                cover
-              >
-              </v-img>
-              <v-card-title>Nombre</v-card-title>
-              <v-card-text>
-                <div>Cargo</div>
-
-                <div>Descripción</div>
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </v-row>
+        </v-hover>
+    </div>
     </v-sheet>
     <!--Nosotros-->
     
     <!--Opiniones-->
-    <v-sheet class="pb-12 fade-show">
+    <v-sheet class="pb-12">
         <h1 class="text-h4 mb-4 pt-6 pb-8 mt-2">Opiniones</h1>
         <v-card
     class="d-flex flex-column mx-auto py-8 pb-3"
@@ -286,7 +194,7 @@
   const model: Ref<string> = ref('')
   </script>
   <style scoped>
-    
+
   .btn:focus {
     outline: none !important;
   }
@@ -314,6 +222,10 @@
   .fade-show-icons-3 {
     animation: showIcons 1.7s ease-in;
     animation-delay: 1.4s;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
   }
   .img-container h1, .img-container p {
     padding-left: 2rem;
@@ -358,37 +270,6 @@
   .social .v-icon:hover {
     transform: translateY(-4px);
   }
-  /** Animaciones **/
-  @keyframes clipPath {
-    from {
-      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes show {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @keyframes showIcons {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  /** Animaciones **/
 
   @media screen and (min-width:500px) {
     .img {
@@ -397,13 +278,18 @@
   }
 
   @media screen and (min-width:600px) {
-    .slider-productos {
-      max-width: 800px !important;
-    }
     .card-producto {
       width: 200px !important;
       max-height: 300px !important;
       text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .slider-productos {
+      max-width: 800px !important;
     }
     .v-icon {
       font-size: 2rem;
@@ -462,6 +348,11 @@
     }
   }
   @media screen and (min-width: 1500px){
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
     .v-icon {
       font-size: 3rem;
     }

@@ -52,6 +52,17 @@
           <v-list-item prepend-icon="mdi-lock" title="Encuesta" value="encuesta"></v-list-item>
         </router-link>
         </v-list>
+        <v-list density="compact" nav>
+          <router-link class="router-link" to="/valoraciones">
+          <v-list-item prepend-icon="mdi-message-star-outline" title="valoraciones" value="valoraciones"></v-list-item>
+        </router-link>
+      </v-list>
+
+        <v-list density="compact" nav>
+          <router-link class="router-link" to="/contacto">
+          <v-list-item prepend-icon="mdi-email" title="contacto" value="contacto"></v-list-item>
+        </router-link>
+        </v-list>
       </v-navigation-drawer>
 </template>
 <script setup lang="ts">

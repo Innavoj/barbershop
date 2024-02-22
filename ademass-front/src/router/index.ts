@@ -33,6 +33,34 @@ const routes = [
     ],
   },
   {
+    path: "/contacto",
+    component: () => import("@/views/ContactoView.vue"),
+    meta: {
+      requiredAuth: true,
+    },
+    children: [
+      {
+        path: '',
+        name: '/',
+        component: () => import('@/views/HomeView.vue'),
+      },
+    ],
+  },
+  {
+    path: "/valoraciones",
+    component: () => import("@/views/ValoracionesView.vue"),
+    meta: {
+      requiredAuth: true,
+    },
+    children: [
+      {
+        path: '',
+        name: '/',
+        component: () => import('@/views/HomeView.vue'),
+      },
+    ],
+  },
+  {
     path: "/register",
     name: "register",
     meta: {

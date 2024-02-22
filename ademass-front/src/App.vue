@@ -47,7 +47,7 @@ import Menu from './components/layouts/Menu.vue';
 
 const isLayoutA = () => {
   const route = useRoute();
-  console.log('route', route);
+  //console.log('route', route);
   return route.meta.requiredAuth;
 };
 
@@ -76,6 +76,55 @@ nav {
   justify-content: space-between;
 }
 
+  /** Animaciones **/
+  @keyframes clipPath {
+    from {
+      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes showIcons {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes show-X {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 0.5;
+      transform: translateX(0%);
+    }
+  }
+  /** Animaciones **/
 </style>
 
 
