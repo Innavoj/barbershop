@@ -199,7 +199,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 320px) {
   .main-footer {
     float: left;
   }
