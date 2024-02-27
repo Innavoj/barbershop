@@ -168,3 +168,8 @@
         {Usuario: 'Usuario', comentario: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, voluptas', estrellas: 3.5, avatar: 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light'},
     ]
 </script>
+<style>
+.animation-opacity {
+    animation: opacity 1s ease-in;
+}
+</style>

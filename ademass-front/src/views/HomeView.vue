@@ -1,5 +1,5 @@
 <template>
-    <v-app class="text-center fade-show">
+    <v-app class="text-center">
     <!--Imagen destacada-->
     <div class="img-container">
         <v-img class="img" aspect-ratio="16/9" cover src="https://firebasestorage.googleapis.com/v0/b/bd-audios.appspot.com/o/barbero-que-afeita-cuello-cliente.jpg?alt=media&token=1feb5965-294e-4c37-abcf-08e2bdb57c9f"></v-img>
@@ -125,7 +125,7 @@
     <!--Nosotros-->
     
     <!--Opiniones-->
-    <v-sheet class="pb-12">
+    <!--<v-sheet class="pb-12">
         <h1 class="text-h4 mb-4 pt-6 pb-8 mt-2">Opiniones</h1>
         <v-card
     class="d-flex flex-column mx-auto py-8 pb-3"
@@ -178,12 +178,12 @@
         </v-list-item>
         </v-list>
     </v-card>
-    </v-sheet>
+    </v-sheet>-->
     <!--Opiniones-->
 
     </v-app>
 </template>
-  <script setup lang='ts'>
+<script setup lang='ts'>
   import { Ref, ref } from 'vue';
   const servicios= [
           { titulo: 'Servicio 1', icono: 'mdi-content-cut' },
@@ -192,8 +192,8 @@
           { titulo: 'Servicio 4', icono: 'mdi-hair-dryer' }
   ]
   const model: Ref<string> = ref('')
-  </script>
-  <style scoped>
+</script>
+<style scoped>
 
   .btn:focus {
     outline: none !important;
@@ -213,15 +213,14 @@
   }
   .fade-show-icons-1 {
     animation: showIcons 1.7s ease-in;
-    animation-delay: 1s;
   }
   .fade-show-icons-2 {
     animation: showIcons 1.7s ease-in;
-    animation-delay: 1.3s;
+    animation-delay: 0.8s;
   }
   .fade-show-icons-3 {
     animation: showIcons 1.7s ease-in;
-    animation-delay: 1.4s;
+    animation-delay: 1s;
   }
   .grid {
     display: flex;
@@ -235,11 +234,14 @@
     width: 100vw;
     transition: all 1s ease;
     clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
+    animation: clipPath-img 2s ease-in;
+    animation-delay: 0.5s;
   }
   .img-container {
     position: relative;
     width: 100%;
     text-align: center;
+
   }
   .section-clip-path {
     background: linear-gradient(#ccc, #fff);
@@ -259,7 +261,7 @@
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.4rem;
     right: 0.5rem;
     padding: 0 !important;
     transition: all 1s ease;
@@ -269,6 +271,24 @@
   }
   .social .v-icon:hover {
     transform: translateY(-4px);
+  }
+  /** Animaciones **/
+  @keyframes clipPath {
+    from {
+      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes clipPath-img {
+    from {
+      clip-path: polygon(0% 100%, 25% 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+    to {
+      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
+    }
   }
 
   @media screen and (min-width:500px) {
@@ -322,6 +342,12 @@
       bottom: 36%;
       right: -1rem;
     }
+    .img {
+      clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
+    }
+    .card-nosotros {
+      height: 450px !important;
+    }
       /** Animaciones **/
   @keyframes clipPath {
     from {
@@ -329,6 +355,14 @@
     }
     to {
       clip-path: polygon(0% 65%, 25% 68%, 100% 65%, 100% 0%, 0% 0%);
+    }
+  }
+  @keyframes clipPath-img {
+    from {
+      clip-path: polygon(0% 65%, 25% 68%, 100% 65%, 100% 0%, 0% 0%);
+    }
+    to {
+      clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
     }
   }
   /** Animaciones **/
@@ -340,12 +374,7 @@
       padding: 2rem;
       top: 2%;
     }*/
-    .img {
-      clip-path: polygon(0% 55%, 25% 68%, 100% 50%, 100% 0%, 0% 0%);
-    }
-    .card-nosotros {
-      height: 450px !important;
-    }
+ 
   }
   @media screen and (min-width: 1500px){
     .grid {
