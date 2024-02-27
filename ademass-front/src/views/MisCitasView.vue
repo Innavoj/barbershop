@@ -1,6 +1,7 @@
 <template>
-  <v-container class="container-flex">
-  <v-card flat title="Mis Reservas">
+  <v-container class="container-flex mb-8  align-center  justify-center" style="height: 80vh;">
+     <h1 class="text-center">Mis Reservas</h1>
+  <v-card flat title="">
     <v-data-table :headers="headers" :items="item" class="table"></v-data-table>
   </v-card>
 </v-container>

@@ -60,7 +60,7 @@
 
         <v-list density="compact" nav>
           <router-link class="router-link" to="/contacto">
-          <v-list-item prepend-icon="mdi-email" title="contacto" value="contacto"></v-list-item>
+          <v-list-item prepend-icon="mdi-email" title="contacto" value="contacto" ></v-list-item>
         </router-link>
         </v-list>
       </v-navigation-drawer>

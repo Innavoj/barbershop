@@ -1,13 +1,15 @@
 <template>
-  <v-main style="max-width: 700px; margin: auto;">
-
+  <v-main class="mb-12" style="max-width: 700px; margin: auto;" >
+    <h1 class="container-flex text-center"> Mi Perfil</h1>
+    <hr class="mb-6">
 
     <v-form>
+      
       <v-row align="center" justify="center" >
-
+   
         <div class="flex-container">
           <label for="fileInput" class="avatar-label">
-            <v-icon class="custom-icon" size="x-large">mdi-swap-horizontal</v-icon>
+            <v-icon class="custom-icon " size="x-large">mdi-swap-horizontal</v-icon>
             <v-avatar class="profile-avatar">
             </v-avatar>
             <v-file-input id="fileInput" class="profile-input"></v-file-input>
@@ -41,7 +43,7 @@
       </v-row>
 
       <v-row>
-        <v-col>
+        <v-col class="text-center">
           <v-btn type="submit" color="details">Actualizar</v-btn>
         </v-col>
       </v-row>

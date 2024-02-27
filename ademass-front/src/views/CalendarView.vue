@@ -42,7 +42,7 @@ let events = ref([
 ]);
 let config = ref({
   locale: "es-ES",
-  defaultMode: "month",
+  defaultMode: "week",
   style: {
     colorSchemes: {
       meetings: {
