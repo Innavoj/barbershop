@@ -26,6 +26,37 @@
 
       <v-row>
         <v-col>
+          <v-text-field label="Nombre" type="text"></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <v-text-field label="Apellidos" type="text"></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <v-text-field label="Teléfono" type="text"></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <v-text-field label="Email" type="email"></v-text-field>
+        </v-col>
+      </v-row>
+
+
+      <v-row>
+        <v-col class="text-center">
+          <v-btn type="submit" color="details">Actualizar</v-btn>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
           <v-text-field label="Contraseña Actual" type="password"></v-text-field>
         </v-col>
       </v-row>
