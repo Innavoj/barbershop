@@ -42,14 +42,14 @@
 
       <v-row>
         <v-col>
-          <v-btn type="submit" color="primary">Actualizar</v-btn>
+          <v-btn type="submit" color="details">Actualizar</v-btn>
         </v-col>
       </v-row>
     </v-form>
   </v-main>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue';
 
 const imagen = ref(null);
@@ -97,8 +97,6 @@ const imagen = ref(null);
   background-color: white;
   z-index: 1;
 }
-
-
 
 /* Estilos adicionales para el formulario, ajusta según sea necesario */
 v-form {
