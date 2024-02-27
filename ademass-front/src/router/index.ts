@@ -26,9 +26,9 @@ const routes = [
     },
     children: [
       {
-        path: '',
-        name: '/',
-        component: () => import('@/views/HomeView.vue'),
+        path: "",
+        name: "/",
+        component: () => import("@/views/HomeView.vue"),
       },
     ],
   },
@@ -141,46 +141,42 @@ const routes = [
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-    import("@/views/PerfilView.vue")
+    component: () => import("@/views/PerfilView.vue"),
   },
   {
-    path: "/encuesta",
-    name: "encuesta",
+    path: "/carrito",
+    name: "carrito",
     meta: {
       requiredAuth: true,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-    import("@/views/EncuestaView.vue")
+    component: () => import("@/views/CarritoView.vue"),
   },
   {
-    path: '/producto',
-    name: 'producto',
+    path: "/producto",
+    name: "producto",
     meta: {
-      requiredAuth: true
+      requiredAuth: true,
     },
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-    import("@/views/ProductView.vue")
+    component: () => import("@/views/ProductView.vue"),
   },
   {
-    path: '/servicios',
-    name: 'servicios',
+    path: "/servicios",
+    name: "servicios",
     meta: {
-      requiredAuth: true
+      requiredAuth: true,
     },
-    
+
     // route level code-splittingyarn
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-    import("@/views/ServicesView.vue")
-  }
+    component: () => import("@/views/ServicesView.vue"),
+  },
 ];
 
 const router = createRouter({
