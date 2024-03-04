@@ -10,7 +10,7 @@ export const useAppStore = defineStore('app', {
     }
   },
   actions: {
-    async register(name: string, email: string, password: string) {
+    async register(name: string, lastname: string, email: string, password: string) {
       //const uri = `${this.baseUrl}/api/endpoint`
 
       //Peticion al endpoint, por método post
@@ -31,7 +31,7 @@ export const useAppStore = defineStore('app', {
       const response = await rawResponse.json()*/
       //manage response
       const response: IResponse = { status: true}
-      console.log(`El username es: ${name}, El password es: ${password}, El correo es: ${email} `)
+      console.log(`El username es: ${name}, El lastname es: ${lastname} El password es: ${password}, El correo es: ${email} `)
       if (response.status === false) {
         return false
       } else {

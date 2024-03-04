@@ -126,4 +126,3 @@ nav {
   }
   /** Animaciones **/
 </style>
-
