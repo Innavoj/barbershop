@@ -9,17 +9,27 @@
         class="mt-2 bg-black"
         ><h1>BarberShop</h1></v-btn
       >
-      <v-form class="mt-10 mb-5" @submit.prevent>
+      <h3 class="text-center pa-2">Restablecer la Password</h3>
+      <v-form class="mt-5 mb-5" @submit.prevent>
         <v-text-field
           type="password"
           v-model="nuevapassword"
           label="New Password"
+          prepend-inner-icon="mdi-lock-outline"
+          :rules="Rules"
+          required
+          clearable
         ></v-text-field>
+
         <v-text-field
           type="password"
           v-model="confirmpassword"
           label="Confirm New Password"
+          prepend-inner-icon="mdi-lock-outline"
+          :rules="Rules"
+          clearable
         ></v-text-field>
+
         <v-btn
           type="submit"
           rounded="lg"
@@ -47,6 +57,12 @@ const nuevapassword = ref("");
 const confirmpassword = ref("");
 const feedback = ref("");
 const store = useAppStore();
+
+const Rules = [
+  (v) => !!v || "Password is required",
+  (v) => (v && v.length > 8) || "Password debe ser mayor que 8 characters",
+  (v) => v.newpassword != v.confirmpassword || "La Password deben ser iguales",
+];
 
 const newpassword = async () => {
   feedback.value = "...";
