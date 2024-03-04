@@ -4,9 +4,9 @@
     <hr class="mb-6">
 
     <v-form>
-      
+
       <v-row align="center" justify="center" >
-   
+
         <div class="flex-container">
           <label for="fileInput" class="avatar-label">
             <v-icon class="custom-icon " size="x-large">mdi-swap-horizontal</v-icon>
@@ -18,6 +18,9 @@
 
 
       </v-row>
+
+    </v-form>
+    <v-form>
       <v-row>
         <v-col>
           <v-text-field label="Email" type="email"></v-text-field>
@@ -48,12 +51,14 @@
         </v-col>
       </v-row>
 
-
       <v-row>
         <v-col class="text-center">
-          <v-btn type="submit" color="details">Actualizar</v-btn>
+          <v-btn type="submit" color="details">Actualizar Datos</v-btn>
         </v-col>
       </v-row>
+    </v-form>
+
+    <v-form>
 
       <v-row>
         <v-col>
@@ -75,7 +80,7 @@
 
       <v-row>
         <v-col class="text-center">
-          <v-btn type="submit" color="details">Actualizar</v-btn>
+          <v-btn type="submit" color="details">Actualizar Contraseña</v-btn>
         </v-col>
       </v-row>
     </v-form>
