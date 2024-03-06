@@ -9,7 +9,13 @@
     </div>
 
     <v-sheet class="d-flex flex-column flex-wrap justify-center mt-4">
-      <h2
+      <h2 v-show="(productos.length == 0)"
+        class="flex-wrap text-center justify-center"
+        style="color: rgb(255, 81, 0)"
+      >
+        La Cesta esta Vacia
+      </h2>
+      <h2 v-show="(productos.length > 0)"
         class="flex-wrap text-center justify-center"
         style="color: rgb(255, 81, 0)"
       >
@@ -81,7 +87,7 @@ const productos = reactive([
   {
     id: 1,
     name: "Crema Afeitar",
-    src: "https://www.tucompraenoferta.com/cdn/product/5bdb6330a7705.jpg",
+    src: "https://m.media-amazon.com/images/I/51qHyIgmwQL.__AC_SX300_SY300_QL70_ML2_.jpg",
     desc: "La mejor Crema de Afeitar",
     precio: 480,
     rebaja: true,
