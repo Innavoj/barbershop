@@ -16,6 +16,8 @@
       <router-link class="custom-link" :to="{ name: 'forgot-password' }">Olvide mi contraseña</router-link>
     </nav>
 
+    {{ feedback }}
+
   </v-sheet>
 </v-main>
 </template>
@@ -33,11 +35,11 @@ const store = useAppStore();
 
 const registerUser = async () => {
   feedback.value = "..."
-  const response = await store.register(name.value, name.value, email.value, password.value)
+  const response = await store.register(name.value, lastname.value, email.value, password.value)
   if (response === false) {
-    feedback.value = "Login error"
+    feedback.value = "Register error"
   } else {
-    feedback.value = "Login Succeded"
+    feedback.value = "Register Succeded" + store.token
   }
 }
 

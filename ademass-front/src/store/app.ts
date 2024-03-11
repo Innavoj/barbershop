@@ -5,16 +5,16 @@ import IResponse from "@/interfaces/IResponse";
 export const useAppStore = defineStore("app", {
   state: () => {
     return {
-      token: null,
-      baseUrl: "api_url_base",
+      token: null as string | null | undefined,
+      baseUrl: "https://ademass.com/barbershop/api",
     };
   },
   actions: {
     async register(name: string, lastname: string, email: string, password: string) {
-      //const uri = `${this.baseUrl}/api/endpoint`
+      const uri = `${this.baseUrl}/register`
 
       //Peticion al endpoint, por método post
-      /*const rawResponse = await fetch(uri,{
+      const rawResponse = await fetch(uri,{
           method: 'POST',
           headers: {
               'Content-Type': 'Application/json',
@@ -22,21 +22,26 @@ export const useAppStore = defineStore("app", {
           },
           body: JSON.stringify({
               "name": name,
+              "last_name": lastname,
               "email": email,
               "password": password
           })
       })
 
       //Obteniendo los resultados json
-      const response = await rawResponse.json()*/
+      const response: IResponse = await rawResponse.json()
+      console.log(response.message)
+      console.log(response.status)
+      console.log(response.errors?.email)
+      console.log(response.token)
       //manage response
-      const response: IResponse = { status: true}
-      console.log(`El username es: ${name}, El lastname es: ${lastname} El password es: ${password}, El correo es: ${email} `)
-      if (response.status === false) {
-        return false;
+      //cons response: IResponse = { status: true}
+      //console.log(`El username es: ${name}, El lastname es: ${lastname} El password es: ${password}, El correo es: ${email} `)
+      if (response.status === undefined) {
+        return false
       } else {
-        //this.token = response.token
-        return true;
+        this.token = response.token
+        return true
       }
     },
     async login(email: string, password: string) {
