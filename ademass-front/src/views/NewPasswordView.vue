@@ -79,3 +79,4 @@ const newpassword = async () => {
 </script>
 
 <style scoped></style>
+@/store/appStore

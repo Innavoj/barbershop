@@ -1,17 +1,30 @@
 // Utilities
 import { defineStore } from "pinia";
 import IResponse from "@/interfaces/IResponse";
+import AuthServices from "@/services/AuthServices";
 
 export const useAppStore = defineStore("app", {
   state: () => {
     return {
-      token: null as string | null | undefined,
+      /*token: null as string | null | undefined,
       baseUrl: "https://ademass.com/barbershop/api",
     };
   },
   actions: {
     async register(name: string, lastname: string, email: string, password: string) {
-      const uri = `${this.baseUrl}/register`
+      const uri = `${this.baseUrl}/register`*/
+      token: "",
+      // baseUrl: "api_url_base",
+    };
+  },
+  actions: {
+    async register(
+      name: string,
+      lastname: string,
+      email: string,
+      password: string
+    ) {
+      //const uri = `${this.baseUrl}/api/endpoint`
 
       //Peticion al endpoint, por método post
       const rawResponse = await fetch(uri,{
@@ -35,6 +48,8 @@ export const useAppStore = defineStore("app", {
       console.log(response.errors?.email)
       console.log(response.token)
       //manage response
+
+      /*
       //cons response: IResponse = { status: true}
       //console.log(`El username es: ${name}, El lastname es: ${lastname} El password es: ${password}, El correo es: ${email} `)
       if (response.status === undefined) {
@@ -42,6 +57,16 @@ export const useAppStore = defineStore("app", {
       } else {
         this.token = response.token
         return true
+        */
+      const response: IResponse = { status: true };
+      console.log(
+        `El username es: ${name}, El lastname es: ${lastname} El password es: ${password}, El correo es: ${email} `
+      );
+      if (response.status === false) {
+        return false;
+      } else {
+        // this.token = response.token
+        return true;
       }
     },
     async login(email: string, password: string) {
@@ -66,21 +91,33 @@ export const useAppStore = defineStore("app", {
       //Esperando la respuesta en json
       //const response = await rawResponse.json()
 
+      // const response: IResponse = { status: true };
+      // if (response.status === false) {
+      //   //this.token = null
+      //   return false;
+      // } else {
+      //   //this.token = response.token
+      //   return true;
+      // }
       console.log(`El email es: ${email} y el password es: ${password}`);
 
-      const response: IResponse = { status: true };
-      if (response.status === false) {
-        //this.token = null
-        return false;
+      // Usando el servicio para autenticaciones
+
+      const authService = new AuthServices();
+      const response = await authService.userLogin(email, password);
+
+      if (response) {
+        alert("éxito");
+        return (this.token = authService.getToken().value);
       } else {
-        //this.token = response.token
-        return true;
+        alert("login incorrecto");
       }
+      console.log("usuario logueado", this.token);
     },
     logout() {
-      this.token = null;
+      this.token = "";
     },
-    async newpassword(nuevapassword, confirmpassword) {
+    async newpassword(nuevapassword: string, confirmpassword: string) {
       alert(
         "Ha introducido la Nueva Password: " +
           nuevapassword +

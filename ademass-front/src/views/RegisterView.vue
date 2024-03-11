@@ -46,3 +46,4 @@ const registerUser = async () => {
 </script>
 
 <style scoped></style>
+@/store/appStore

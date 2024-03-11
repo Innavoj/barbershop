@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLayoutA()">
+  <div v-if="isLayoutA">
     <v-layout class="rounded rounded-md">
       <v-app-bar class="custom-bg-color" title="BarberShop">
         <router-link class="router-link" to="/login" style="color: #fff;">
@@ -7,11 +7,12 @@
             <template v-slot:prepend>
               <v-icon color="primary"></v-icon>
             </template>
-            Iniciar sesión
+            <span v-if="!isUser">Iniciar sesión</span>
+            <span v-if="isUser">Cerrar sesión</span>
           </v-btn>
         </router-link>
         <router-link class="router-link" to="/register" style="color: #fff;">
-          <v-btn prepend-icon="mdi mdi-account-plus">
+          <v-btn prepend-icon="mdi mdi-account-plus" v-if="!isUser">
             <template v-slot:prepend>
               <v-icon color="primary"></v-icon>
             </template>
@@ -19,7 +20,7 @@
           </v-btn>
         </router-link>
     </v-app-bar>
-      <Menu v-if="isLayoutA()" ></Menu>
+      <Menu v-if="isUser"></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col class="pa-0">
           <router-view />
@@ -44,12 +45,29 @@ import { useRoute } from 'vue-router';
 import Login from '@/components/login/Login.vue'
 import Footer from '@/components/layouts/Footer.vue'
 import Menu from './components/layouts/Menu.vue';
+import { useAppStore } from './store/appStore'
+import { ref, watchEffect } from 'vue';
 
 const isLayoutA = () => {
   const route = useRoute();
   //console.log('route', route);
   return route.meta.requiredAuth;
 };
+
+const isUser = ref(false)
+
+const store = useAppStore();
+let token = store.token;
+  
+// console.log('token desde app.vue', token)
+  watchEffect(() => {
+  token = store.token;
+    console.log('Token actualizado en app.vue', token);
+    if (token) {
+      isUser.value = !isUser.value;
+      console.log(isUser)
+  }
+});
 
 
 </script>
@@ -125,4 +143,4 @@ nav {
     }
   }
   /** Animaciones **/
-</style>
+</style>./store/appStore
