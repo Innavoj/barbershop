@@ -20,8 +20,8 @@
 
 <script lang="ts"  setup>
 import { Ref, ref } from 'vue';
-import { useAppStore } from '@/store/app';
-//import { useRouter } from 'vue-router';
+import { useAppStore } from '@/store/appStore';
+// import { useRouter } from 'vue-router';
 import router from '@/router';
 
 
@@ -33,15 +33,19 @@ const store = useAppStore();
 const loginUser = async () => {
   feedback.value = "..."
   const response = await store.login(email.value, password.value)
-  if (response === false) {
-    feedback.value = "Login error"
-  } else {
-
-    feedback.value = "Login Succeded"
+  if (response) {
+    feedback.value = "Successful login"
     router.push('/')
+  } else {
+    feedback.value = "Login error"
   }
+
+  console.log(response)
 }
+
+
 
 </script>
 
 <style scoped></style>
+@/store/appStore
