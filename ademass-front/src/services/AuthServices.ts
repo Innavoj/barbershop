@@ -40,14 +40,13 @@ class AuthServices {
       // this.response = err;
     }
   }
-  async logout(token) {
+  async logout() {
     try {
       const url = new URL("https://ademass.com/barbershop/api/logout");
-
       const headers = {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + this.getToken(),
       };
 
       const res = await fetch(url, {
