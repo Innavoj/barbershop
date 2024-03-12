@@ -96,6 +96,15 @@ export const useAppStore = defineStore("app", {
     logout() {
       this.token = "";
     },
+    async logout() {
+      this.token = AuthServices.getToken().value;
+      const response = await AuthServices.logout(this.token);
+      if (response) {
+        alert("Logout Exitoso");
+      } else {
+        alert("Fallo en el Logout");
+      }
+    },
     async newpassword(nuevapassword: string, confirmpassword: string) {
       alert(
         "Ha introducido la Nueva Password: " +
