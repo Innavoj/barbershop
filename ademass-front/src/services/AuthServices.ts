@@ -39,6 +39,38 @@ class AuthServices {
       return false;
       // this.response = err;
     }
+  } 
+  async userLogout(token: string): Promise<boolean> {
+    try {
+      const url = new URL("https://ademass.com/barbershop/api/logout");
+
+      console.log(url, token)
+
+      const headers = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Authorization": "Bearer " + token,
+      };
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers
+      });
+      const json = await res.json();
+      console.log(json)
+
+      if (!json.status) {
+        return false;
+      }
+
+      this.token.value = "";
+      return true;
+      
+    } catch (err) {
+      console.log(err);
+      return false;
+      // this.response = err;
+    }
   }
 }
 
