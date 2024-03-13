@@ -40,19 +40,20 @@ class AuthServices {
       // this.response = err;
     }
   }
-  async logout(): Promise<boolean> {
+  async logout(token): Promise<boolean> {
     try {
       const url = new URL("https://ademass.com/barbershop/api/logout");
       const headers = {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: "Bearer " + this.token,
+        Authorization: "Bearer " + token,
       };
       const res = await fetch(url, {
         method: "POST",
         headers,
       });
       const json = await res.json();
+      console.log("Token : " + token);
       if ("Unauthenticated" in json) {
         return false;
       }
