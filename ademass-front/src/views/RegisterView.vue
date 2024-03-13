@@ -7,7 +7,7 @@
       <v-text-field v-model="lastname" label="Lastname"></v-text-field>
 
       <v-text-field v-model="email" label="Email"></v-text-field>
-      <v-text-field v-model="password" label="Password"></v-text-field>
+      <v-text-field v-model="password" label="Password" ></v-text-field>
       <v-btn type="submit" rounded="lg" block  class="mt-2 bg-black" @click.prevent="registerUser">Register</v-btn>
     </v-form>
 
@@ -24,7 +24,7 @@
 
 <script lang="ts"  setup>
 import { Ref, ref } from 'vue';
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/store/appStore';
 
 const name: Ref<string> = ref('');
 const lastname: Ref<string> = ref('');

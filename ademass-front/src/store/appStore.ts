@@ -42,11 +42,11 @@ export const useAppStore = defineStore("app", {
       })
 
       //Obteniendo los resultados json
-      const response: IResponse = await rawResponse.json()
-      console.log(response.message)
-      console.log(response.status)
-      console.log(response.errors?.email)
-      console.log(response.token)
+      const response2: IResponse = await rawResponse.json()
+      console.log(response2.message)
+      console.log(response2.status)
+      console.log(response2.errors?.email)
+      console.log(response2.token)
       //manage response
 
       /*
