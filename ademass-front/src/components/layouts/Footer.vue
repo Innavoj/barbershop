@@ -12,10 +12,11 @@
       <div class="mt-4 mb-4 w-100 text-center">
         <v-btn
           id="btn-icons"
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(icon, index) in redes"
+          :key="index"
           class="mx-4"
-          :icon="icon"
+          :icon="icon.icons"
+          :href="icon.src"
           variant="text"
           density="comfortable"
         ></v-btn>
@@ -74,13 +75,27 @@
   </v-layout>
 </template>
 
-<script>
-export default {
-  name: "App",
-  data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-  }),
-};
+<script setup>
+import { ref } from "vue";
+
+const redes = ref([
+  {
+    icons: "mdi-facebook",
+    src: "https://www.facebook.com",
+  },
+  {
+    icons: "mdi-twitter",
+    src: "https://www.twitter.com",
+  },
+  {
+    icons: "mdi-linkedin",
+    src: "www.linkedin.com/",
+  },
+  {
+    icons: "mdi-instagram",
+    src: "https://www.instagram.com",
+  },
+]);
 </script>
 
 <style scoped>
