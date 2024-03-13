@@ -2,7 +2,7 @@
   <div v-if="isLayoutA">
     <v-layout class="rounded rounded-md">
       <v-app-bar class="custom-bg-color" title="BarberShop">
-        <router-link class="router-link" to="/login" style="color: #fff;">
+        <router-link class="router-link" to="/login" style="color: #fff">
           <v-btn prepend-icon="mdi mdi-login">
             <template v-slot:prepend>
               <v-icon color="primary"></v-icon>
@@ -11,7 +11,10 @@
             <span v-if="isUser">Cerrar sesión</span>
           </v-btn>
         </router-link>
-        <router-link class="router-link" to="/register" style="color: #fff;">
+        <v-btn @click.prevent="store.logout"
+          ><span v-if="isUser">Cerrar sesión</span></v-btn
+        >
+        <router-link class="router-link" to="/register" style="color: #fff">
           <v-btn prepend-icon="mdi mdi-account-plus" v-if="!isUser">
             <template v-slot:prepend>
               <v-icon color="primary"></v-icon>
@@ -19,12 +22,12 @@
             Registrarse
           </v-btn>
         </router-link>
-    </v-app-bar>
+      </v-app-bar>
       <Menu v-if="isUser"></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col class="pa-0">
           <router-view />
-          <Footer/>
+          <Footer />
         </v-col>
       </v-main>
     </v-layout>
@@ -40,13 +43,12 @@
 </template>
 
 <script setup lang="ts">
-
-import { useRoute } from 'vue-router';
-import Login from '@/components/login/Login.vue'
-import Footer from '@/components/layouts/Footer.vue'
-import Menu from './components/layouts/Menu.vue';
-import { useAppStore } from './store/appStore'
-import { ref, watchEffect } from 'vue';
+import { useRoute } from "vue-router";
+import Login from "@/components/login/Login.vue";
+import Footer from "@/components/layouts/Footer.vue";
+import Menu from "./components/layouts/Menu.vue";
+import { useAppStore } from "./store/appStore";
+import { ref, watchEffect } from "vue";
 
 const isLayoutA = () => {
   const route = useRoute();
@@ -54,22 +56,20 @@ const isLayoutA = () => {
   return route.meta.requiredAuth;
 };
 
-const isUser = ref(false)
+const isUser = ref(false);
 
 const store = useAppStore();
 let token = store.token;
-  
+
 // console.log('token desde app.vue', token)
-  watchEffect(() => {
+watchEffect(() => {
   token = store.token;
-    console.log('Token actualizado en app.vue', token);
-    if (token) {
-      isUser.value = !isUser.value;
-      console.log(isUser)
+  console.log("Token actualizado en app.vue", token);
+  if (token) {
+    isUser.value = !isUser.value;
+    console.log(isUser);
   }
 });
-
-
 </script>
 
 <style>
@@ -85,8 +85,8 @@ let token = store.token;
   color: var(--aqua);
 }
 .custom-bg-color {
-  background-color: rgb(80, 75, 75)!important;
-  color: white!important;
+  background-color: rgb(80, 75, 75) !important;
+  color: white !important;
 }
 
 nav {
@@ -94,53 +94,54 @@ nav {
   justify-content: space-between;
 }
 
-  /** Animaciones **/
-  @keyframes clipPath {
-    from {
-      clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
-    }
-    to {
-      opacity: 1;
-    }
+/** Animaciones **/
+@keyframes clipPath {
+  from {
+    clip-path: polygon(0% 72%, 25% 99%, 100% 65%, 100% 0%, 0% 0%);
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  @keyframes show {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
   }
-  @keyframes showIcons {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
   }
-  @keyframes opacity {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+}
+@keyframes showIcons {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
   }
-  @keyframes show-X {
-    from {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    to {
-      opacity: 0.5;
-      transform: translateX(0%);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
   }
-  /** Animaciones **/
-</style>./store/appStore
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes show-X {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(0%);
+  }
+}
+/** Animaciones **/
+</style>
+./store/appStore

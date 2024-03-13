@@ -94,10 +94,12 @@ export const useAppStore = defineStore("app", {
       console.log("usuario logueado", this.token);
     },
     async logout() {
-      const response = await AuthServices.logout();
+      alert("estamos en el logout");
+      const authService = new AuthServices();
+      const response = await authService.logout();
       if (response) {
-        alert("Logout Exitoso");
-        this.token.value = AuthServices.getToken();
+        alert("Logout Exitoso" + this.token);
+        return (this.token = "null");
       } else {
         alert("Fallo en el Logout");
       }
