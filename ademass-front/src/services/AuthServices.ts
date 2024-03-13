@@ -40,7 +40,7 @@ class AuthServices {
       // this.response = err;
     }
   }
-  async logout(token): Promise<boolean> {
+  async logout(token:string): Promise<boolean> {
     try {
       const url = new URL("https://ademass.com/barbershop/api/logout");
       const headers = {

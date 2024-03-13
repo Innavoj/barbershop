@@ -2,18 +2,31 @@
   <div v-if="isLayoutA">
     <v-layout class="rounded rounded-md">
       <v-app-bar class="custom-bg-color" title="BarberShop">
-        <router-link class="router-link" to="/login" style="color: #fff">
+        <router-link
+          class="router-link"
+          :to="{ name: 'login' }"
+          style="color: #fff"
+          v-if="!isUser"
+        >
           <v-btn prepend-icon="mdi mdi-login">
             <template v-slot:prepend>
               <v-icon color="primary"></v-icon>
             </template>
-            <span v-if="!isUser">Iniciar sesión</span>
-            <span v-if="isUser">Cerrar sesión</span>
+            <span>Iniciar sesión</span>
+            <!-- <span v-if="isUser">Cerrar sesión</span> -->
           </v-btn>
         </router-link>
-        <v-btn @click.prevent="store.logout"
-          ><span v-if="isUser">Cerrar sesión</span></v-btn
+        <v-btn
+          prepend-icon="mdi mdi-login"
+          v-else
+          @click.prevent="store.logout"
         >
+          <template v-slot:prepend>
+            <v-icon color="primary"></v-icon>
+          </template>
+          <!-- <span v-if="!isUser">Iniciar sesión</span> -->
+          <span>Cerrar sesión</span>
+        </v-btn>
         <router-link class="router-link" to="/register" style="color: #fff">
           <v-btn prepend-icon="mdi mdi-account-plus" v-if="!isUser">
             <template v-slot:prepend>
