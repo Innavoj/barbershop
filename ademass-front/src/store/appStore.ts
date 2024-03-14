@@ -121,13 +121,13 @@ export const useAppStore = defineStore("app", {
       console.log(response);
 
       if (!response) {
+        alert("logout falló appstore");
+        return false;
+      } else {
         alert("éxito");
         this.token = authService.getToken().value;
         console.log("sesión cerró", this.token);
-        return this.token;
-      } else {
-        alert("logout falló appstore");
-        return false;
+        return this.token;  
       }
     },
     async newpassword(nuevapassword: string, confirmpassword: string) {
