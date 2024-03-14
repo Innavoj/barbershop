@@ -40,6 +40,30 @@ class AuthServices {
       // this.response = err;
     }
   }
+  async logout(token:string): Promise<boolean> {
+    try {
+      const url = new URL("https://ademass.com/barbershop/api/logout");
+      const headers = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: "Bearer " + token,
+      };
+      const res = await fetch(url, {
+        method: "POST",
+        headers,
+      });
+      const json = await res.json();
+      console.log("Token : " + token);
+      if ("Unauthenticated" in json) {
+        return false;
+      }
+      this.token.value = "null";
+      return true;
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
 }
 
 export default AuthServices;
