@@ -1,4 +1,4 @@
-# Sistema como servicio para un barbershop 💈✂️ utilizando Vuejs, vuetify. En prácticas con empresa Española 🇪🇦 Ademass Training Development 
+# App como servicio para un barbershop 💈✂️ utilizando Vuejs, vuetify. En prácticas con empresa Española 🇪🇦 Ademass Training Development 
 
 ## Project setup
 
