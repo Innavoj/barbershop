@@ -1,4 +1,4 @@
-# essentials
+# Sistema como servicio para un barbershop 💈✂️ utilizando Vuejs, vuetify. en colaboración con empresa Española 🇪🇦 Ademass Training Development 
 
 ## Project setup
 
