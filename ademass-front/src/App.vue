@@ -36,7 +36,7 @@
           </v-btn>
         </router-link>
       </v-app-bar>
-      <Menu v-if="isUser"></Menu>
+      <Menu v-if="!isUser"></Menu>
       <v-main class="d-flex align-center justify-center">
         <v-col class="pa-0">
           <router-view />
@@ -69,7 +69,7 @@ const isLayoutA = () => {
   return route.meta.requiredAuth;
 };
 
-const isUser = ref(false)
+const isUser = ref(true)
 console.log(isUser)
 
 const store = useAppStore();
@@ -89,7 +89,7 @@ const logoutUser = async () => {
   console.log(response)
 }
 
-  
+
 // console.log('token desde app.vue', token)
 watchEffect(() => {
   token = store.token;
